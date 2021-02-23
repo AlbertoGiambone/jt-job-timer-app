@@ -122,6 +122,9 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
             let nextVC = segue.destination as! AddJobViewController
             nextVC.clientName = clientNameFromCVC
             nextVC.clientID = clientIDFromCVC
+            if EDIT_ROW != nil {
+            nextVC.EditVC = EDIT_ROW
+            }
         }
     }
     
@@ -143,7 +146,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
         cell.textLabel?.textColor = UIColor.black
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         
-        cell.detailTextLabel?.textColor = UIColor.white
+        cell.detailTextLabel?.textColor = UIColor.gray
         cell.detailTextLabel?.font = UIFont(name: "Galvji", size: 11)
         
         return cell
@@ -163,6 +166,13 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
             self.table.deleteRows(at: [indexPath], with: .fade)
             self.table.reloadData()
         }
+    }
+    
+    
+    var EDIT_ROW: jobDetail?
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        EDIT_ROW = WDday[indexPath.row]
+        performSegue(withIdentifier: "addJob", sender: nil)
     }
     
     

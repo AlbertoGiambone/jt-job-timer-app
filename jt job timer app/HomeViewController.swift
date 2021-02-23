@@ -170,10 +170,10 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     //MARK: Reinit array for right counting
     
     override func viewDidDisappear(_ animated: Bool) {
-            clientCounter = [String]()
+        clientCounter.removeAll()
             Cnumber = 0
-            stodo = [Double]()
-            hoursCounter = [String]()
+        stodo.removeAll()
+        hoursCounter.removeAll()
     }
 
 }

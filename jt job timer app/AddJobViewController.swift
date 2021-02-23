@@ -16,6 +16,8 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
     var clientName: String?
     var clientID: String?
     
+    var EditVC: jobDetail?
+    
     //MARK: Connection
     
     @IBOutlet weak var hNumber: RoundTextField!
@@ -54,18 +56,33 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         overrideUserInterfaceStyle = .light
         
         hNumber.delegate = self
+        
+        if EditVC != nil {
+            hNumber.text = EditVC?.hoursNumber ?? ""
+            jobType.text = EditVC?.jobType ?? ""
+            jobDate.text = EditVC?.jobdate ?? ""
+            clientName = EditVC?.clientName ?? ""
+        }
+        
     }
     
 
     @IBAction func addDayJOb(_ sender: RoundButton) {
         
+        let userUID = UserDefaults.standard.object(forKey: "userInfo")
+        
+        if EditVC == nil {
+        
         if hNumber.hasText == true && clientName != nil {
             
-            let userUID = UserDefaults.standard.object(forKey: "userInfo")
+            
             
             var HNumber = hNumber.text
             HNumber?.replace(",", with: ".")
-            
+            if Double(HNumber!) == nil {
+                saveButton.isEnabled = false
+                print("SAVE BUTTON DISABLED!")
+            }else{
             db.collection("JobTime").addDocument(data: [
                 "JUID": String(userUID as! String),
                 "client name": String(clientName!),
@@ -78,20 +95,37 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
                     print("Error adding document: \(err)")
                 } else {
                     //print("Document added with ID: \(ref.documentID)")
+                    }
                 }
             }
             
-            /*
-            db.collection("Customer").document(clientName!).collection(clientName!).document(jobDate.text!).setData([
-                "hours number": String("\(hNumber.text!)"),
-                "job type": String("\(jobType.text ?? "")"),
-                "job date": String("\(jobDate.text ?? "")")
-            
-                
-            ], merge: false)*/
             
         }else{
             saveButton.isEnabled = false
+            }
+        }else{
+            if hNumber.hasText && clientName != nil {
+                
+                var HNumber = hNumber.text
+                HNumber?.replace(",", with: ".")
+                if Double(HNumber!) == nil {
+                    saveButton.isEnabled = false
+                    print("SAVE BUTTON DISABLED!")
+                }else{
+                    let DOCREFERENCE = db.collection("JobTime").document(EditVC!.docID)
+                    
+                    DOCREFERENCE.setData([
+                        "JUID": String(userUID as! String),
+                        "client name": String(clientName!),
+                        "hours number": String(HNumber ?? ""),
+                        "job type": String(jobType.text ?? ""),
+                        "job date": String(jobDate.text ?? ""),
+                        "clientID": String(EditVC?.clientID ?? "")
+                    ])
+                        
+                }
+                
+            }
         }
         navigationController?.popViewController(animated: true)
         
