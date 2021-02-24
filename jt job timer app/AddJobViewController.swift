@@ -43,15 +43,62 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
     
     let db = Firestore.firestore()
     
+    
+    
+    //MARK: LifeCycle
+    
+    var datePicker : UIDatePicker?
+    
+    //DoneButton
+    @objc func doneClicked() {
+        view.endEditing(true)
+    }
+    
+    @objc func datePickerDone() {
+        jobDate.resignFirstResponder()
+       }
+
+       @objc func dateChanged() {
+        var newDate = datePicker?.date
+        var dayFormatter = DateFormatter()
+        dayFormatter.dateStyle = .short
+        jobDate.text = dayFormatter.string(from: newDate!)
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //MARK: Picker Settigs
+        
+        datePicker = UIDatePicker.init(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 200))
+        datePicker?.datePickerMode = .date
+        datePicker!.addTarget(self, action: #selector(self.dateChanged), for: .allEvents)
+        jobDate.inputView = datePicker
+               let doneButton = UIBarButtonItem.init(title: "Done", style: .done, target: self, action: #selector(self.datePickerDone))
+               let toolBar = UIToolbar.init(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 44))
+        toolBar.setItems([UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil), doneButton], animated: true)
+        jobDate.inputAccessoryView = toolBar
+        
+        
+        
         let day = Date()
         let dayFormatter = DateFormatter()
         dayFormatter.dateStyle = .short
         jobDate.text = dayFormatter.string(from: day)
         
         print(Date())
+        
+        // Mark Keyboard ToolBar setting
+        
+        let FooltoolBar = UIToolbar()
+        FooltoolBar.sizeToFit()
+        
+        let FooldoneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.doneClicked))
+        
+        FooltoolBar.setItems([FooldoneButton], animated: false)
+        
+        hNumber.inputAccessoryView = FooltoolBar
+        jobType.inputAccessoryView = FooltoolBar
         
         overrideUserInterfaceStyle = .light
         
