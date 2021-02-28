@@ -91,9 +91,6 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
-        
         clientName.text = String("🙋‍♂️ \(clientNameFromCVC!)")
         
         table.dataSource = self
@@ -122,9 +119,11 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
             let nextVC = segue.destination as! AddJobViewController
             nextVC.clientName = clientNameFromCVC
             nextVC.clientID = clientIDFromCVC
-            if EDIT_ROW != nil {
-            nextVC.EditVC = EDIT_ROW
-            }
+        }
+            if segue.identifier == "editJob"  {
+                let nextVC = segue.destination as! AddJobViewController
+                 nextVC.EditVC = EDIT_ROW
+                nextVC.decide = true
         }
     }
     
@@ -172,7 +171,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     var EDIT_ROW: jobDetail?
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         EDIT_ROW = WDday[indexPath.row]
-        performSegue(withIdentifier: "addJob", sender: nil)
+        performSegue(withIdentifier: "editJob", sender: nil)
     }
     
     

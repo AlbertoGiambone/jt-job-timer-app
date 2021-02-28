@@ -16,6 +16,7 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
     var clientName: String?
     var clientID: String?
     
+    var decide = false
     var EditVC: jobDetail?
     
     //MARK: Connection
@@ -65,6 +66,16 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         jobDate.text = dayFormatter.string(from: newDate!)
        }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if decide == true {
+            hNumber.text = EditVC?.hoursNumber
+            jobType.text = EditVC?.jobType
+            jobDate.text = EditVC?.jobdate
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -104,21 +115,15 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         
         hNumber.delegate = self
         
-        if EditVC != nil {
-            hNumber.text = EditVC?.hoursNumber ?? ""
-            jobType.text = EditVC?.jobType ?? ""
-            jobDate.text = EditVC?.jobdate ?? ""
-            clientName = EditVC?.clientName ?? ""
-        }
-        
     }
+    
     
 
     @IBAction func addDayJOb(_ sender: RoundButton) {
         
         let userUID = UserDefaults.standard.object(forKey: "userInfo")
         
-        if EditVC == nil {
+        if decide == false {
         
         if hNumber.hasText == true && clientName != nil {
             
@@ -150,8 +155,9 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         }else{
             saveButton.isEnabled = false
             }
-        }else{
-            if hNumber.hasText && clientName != nil {
+        }
+        if decide == true {
+            if hNumber.hasText {
                 
                 var HNumber = hNumber.text
                 HNumber?.replace(",", with: ".")
@@ -163,7 +169,7 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
                     
                     DOCREFERENCE.setData([
                         "JUID": String(userUID as! String),
-                        "client name": String(clientName!),
+                        "client name": String(EditVC!.clientName),
                         "hours number": String(HNumber ?? ""),
                         "job type": String(jobType.text ?? ""),
                         "job date": String(jobDate.text ?? ""),

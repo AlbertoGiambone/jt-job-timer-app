@@ -195,17 +195,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlE-Em-A39">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏠 Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S0-KP-6g3">
-                                                <rect key="frame" x="52.5" y="30" width="309" height="40"/>
-                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="309" id="LnG-vT-Tvi"/>
-                                                    <constraint firstAttribute="height" constant="40" id="yGk-BY-eGt"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="40"/>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcl-h0-Vvl">
                                                 <rect key="frame" x="44" y="182" width="326" height="35"/>
                                                 <constraints>
@@ -217,7 +206,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsE-HI-7Im">
-                                                <rect key="frame" x="44.5" y="126" width="325" height="35"/>
+                                                <rect key="frame" x="44.5" y="345" width="325" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="325" id="V4n-7v-Ewb"/>
                                                     <constraint firstAttribute="height" constant="35" id="q2Z-Fk-cKa"/>
@@ -226,13 +215,24 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏠 Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S0-KP-6g3">
+                                                <rect key="frame" x="52.5" y="30" width="309" height="40"/>
+                                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="309" id="LnG-vT-Tvi"/>
+                                                    <constraint firstAttribute="height" constant="40" id="yGk-BY-eGt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="40"/>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.98695126742611694" blue="0.91734734514922511" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="RsE-HI-7Im" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="56" id="0w7-N5-mi2"/>
-                                            <constraint firstItem="kcl-h0-Vvl" firstAttribute="top" secondItem="RsE-HI-7Im" secondAttribute="bottom" constant="21" id="H0c-Cz-XwO"/>
-                                            <constraint firstItem="RsE-HI-7Im" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="KKc-h8-s2j"/>
+                                            <constraint firstItem="kcl-h0-Vvl" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="112" id="UOH-pR-8AU"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="top" secondItem="tlE-Em-A39" secondAttribute="top" constant="30" id="eT1-jm-e9I"/>
+                                            <constraint firstItem="RsE-HI-7Im" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="nhg-Tn-Tvn"/>
+                                            <constraint firstItem="RsE-HI-7Im" firstAttribute="top" secondItem="kcl-h0-Vvl" secondAttribute="bottom" constant="128" id="oAd-xk-bLd"/>
                                             <constraint firstItem="kcl-h0-Vvl" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="vI4-f6-CTJ"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="yTh-cc-mAn"/>
                                         </constraints>
@@ -652,7 +652,7 @@
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="plus.viewfinder" catalog="system"/>
                                         <connections>
-                                            <action selector="AddJob:" destination="Ha6-yT-aD0" eventType="touchUpInside" id="Pid-xJ-del"/>
+                                            <action selector="AddJob:" destination="Ha6-yT-aD0" eventType="touchUpInside" id="g1t-gY-Z6K"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -686,6 +686,7 @@
                         <outlet property="counterLabel" destination="pqj-Kk-G1V" id="maP-O5-cJC"/>
                         <outlet property="table" destination="Gbj-bs-NYD" id="GPc-RD-XgL"/>
                         <segue destination="0QZ-je-O2m" kind="show" identifier="addJob" id="vr6-eW-WkD"/>
+                        <segue destination="0QZ-je-O2m" kind="show" identifier="editJob" id="57i-C8-sJx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGz-C5-fRn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -780,6 +781,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
+        <segue reference="57i-C8-sJx"/>
         <segue reference="xP6-Cp-oJB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
