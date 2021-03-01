@@ -195,26 +195,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tlE-Em-A39">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcl-h0-Vvl">
-                                                <rect key="frame" x="44" y="182" width="326" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="326" id="3VI-gx-L7c"/>
-                                                    <constraint firstAttribute="height" constant="35" id="Lgo-77-Y4R"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsE-HI-7Im">
-                                                <rect key="frame" x="44.5" y="345" width="325" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="325" id="V4n-7v-Ewb"/>
-                                                    <constraint firstAttribute="height" constant="35" id="q2Z-Fk-cKa"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="19"/>
-                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🏠 Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1S0-KP-6g3">
                                                 <rect key="frame" x="52.5" y="30" width="309" height="40"/>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -226,15 +206,62 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="⏰ Worked:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xXO-NZ-iwJ">
+                                                <rect key="frame" x="69" y="269" width="167" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="aec-q9-nsc"/>
+                                                    <constraint firstAttribute="width" constant="167" id="zY9-3F-daR"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-yV-lWg">
+                                                <rect key="frame" x="244" y="269" width="102" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="102" id="B3D-ya-Gzs"/>
+                                                    <constraint firstAttribute="height" constant="34" id="Gqh-Ri-Phh"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Total 🤵‍♂️ Number:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSu-aV-V7V">
+                                                <rect key="frame" x="69" y="177" width="167" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="1SR-AG-f3c"/>
+                                                    <constraint firstAttribute="width" constant="167" id="3Id-TP-Dfh"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shv-Lq-fi0">
+                                                <rect key="frame" x="244" y="177" width="102" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="1jh-ne-qjT"/>
+                                                    <constraint firstAttribute="width" constant="102" id="T8Y-MP-S4e"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.98695126742611694" blue="0.91734734514922511" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="kcl-h0-Vvl" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="112" id="UOH-pR-8AU"/>
+                                            <constraint firstAttribute="trailing" secondItem="uUc-yV-lWg" secondAttribute="trailing" constant="68" id="DNM-od-IuO"/>
+                                            <constraint firstAttribute="trailing" secondItem="Shv-Lq-fi0" secondAttribute="trailing" constant="68" id="FQz-Tr-xFt"/>
+                                            <constraint firstItem="uUc-yV-lWg" firstAttribute="top" secondItem="Shv-Lq-fi0" secondAttribute="bottom" constant="58" id="Mn8-tV-ihP"/>
+                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="69" id="TGT-DO-wXD"/>
+                                            <constraint firstItem="xXO-NZ-iwJ" firstAttribute="top" secondItem="bSu-aV-V7V" secondAttribute="bottom" constant="58" id="VOv-Hj-QCD"/>
+                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="8" symbolic="YES" id="ctF-BK-Gvb"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="top" secondItem="tlE-Em-A39" secondAttribute="top" constant="30" id="eT1-jm-e9I"/>
-                                            <constraint firstItem="RsE-HI-7Im" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="nhg-Tn-Tvn"/>
-                                            <constraint firstItem="RsE-HI-7Im" firstAttribute="top" secondItem="kcl-h0-Vvl" secondAttribute="bottom" constant="128" id="oAd-xk-bLd"/>
-                                            <constraint firstItem="kcl-h0-Vvl" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="vI4-f6-CTJ"/>
+                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="107" id="lyz-sA-wIp"/>
+                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="107" id="m5K-PT-2z4"/>
+                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="8" symbolic="YES" id="otI-5U-4be"/>
+                                            <constraint firstItem="xXO-NZ-iwJ" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="69" id="sfv-of-iMw"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="yTh-cc-mAn"/>
+                                            <constraint firstItem="uUc-yV-lWg" firstAttribute="leading" secondItem="xXO-NZ-iwJ" secondAttribute="trailing" constant="8" symbolic="YES" id="zRF-IF-54h"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -278,8 +305,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="clientNumber" destination="RsE-HI-7Im" id="veH-hA-Stk"/>
-                        <outlet property="hoursWorked" destination="kcl-h0-Vvl" id="adX-Yi-8qq"/>
+                        <outlet property="clientNumber" destination="Shv-Lq-fi0" id="Zuh-YT-YXg"/>
+                        <outlet property="hoursNumber" destination="uUc-yV-lWg" id="kri-Lr-WrZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -781,7 +808,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="57i-C8-sJx"/>
+        <segue reference="vr6-eW-WkD"/>
         <segue reference="xP6-Cp-oJB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

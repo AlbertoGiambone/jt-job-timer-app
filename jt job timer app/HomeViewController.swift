@@ -15,13 +15,15 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     
     //MARK: Connection
     
-    @IBOutlet weak var clientNumber: UILabel!
-    
-    @IBOutlet weak var hoursWorked: UILabel!
-    
 
+    @IBOutlet weak var clientNumber: UITextField!
     
-  
+    
+    @IBOutlet weak var hoursNumber: UITextField!
+    
+    
+    
+    
     
     
     @IBAction func LogOut(_ sender: UIBarButtonItem) {
@@ -120,7 +122,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                     
                 }
             }
-            self.clientNumber.text = String("Total 🤵‍♂️ Number \(self.clientCounter.count)")
+            self.clientNumber.text = String("\(self.clientCounter.count)")
             print("NUMERO CLIENTI   \(self.clientCounter.count)")
         }
 
@@ -151,7 +153,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                 self.stodo.append(Double(r)!)
             }
             
-            self.hoursWorked.text = String("Total ⏰ Worked: \(self.stodo.reduce(0, +))")
+            self.hoursNumber.text = String("\(self.stodo.reduce(0, +))")
         }
         
         
