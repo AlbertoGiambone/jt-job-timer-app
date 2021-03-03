@@ -227,10 +227,10 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Total 🤵‍♂️ Number:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSu-aV-V7V">
-                                                <rect key="frame" x="69" y="177" width="167" height="34"/>
+                                                <rect key="frame" x="32" y="177" width="204" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="1SR-AG-f3c"/>
-                                                    <constraint firstAttribute="width" constant="167" id="3Id-TP-Dfh"/>
+                                                    <constraint firstAttribute="width" constant="204" id="3Id-TP-Dfh"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
@@ -252,7 +252,7 @@
                                             <constraint firstAttribute="trailing" secondItem="uUc-yV-lWg" secondAttribute="trailing" constant="68" id="DNM-od-IuO"/>
                                             <constraint firstAttribute="trailing" secondItem="Shv-Lq-fi0" secondAttribute="trailing" constant="68" id="FQz-Tr-xFt"/>
                                             <constraint firstItem="uUc-yV-lWg" firstAttribute="top" secondItem="Shv-Lq-fi0" secondAttribute="bottom" constant="58" id="Mn8-tV-ihP"/>
-                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="69" id="TGT-DO-wXD"/>
+                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="32" id="TGT-DO-wXD"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="top" secondItem="bSu-aV-V7V" secondAttribute="bottom" constant="58" id="VOv-Hj-QCD"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="8" symbolic="YES" id="ctF-BK-Gvb"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="top" secondItem="tlE-Em-A39" secondAttribute="top" constant="30" id="eT1-jm-e9I"/>

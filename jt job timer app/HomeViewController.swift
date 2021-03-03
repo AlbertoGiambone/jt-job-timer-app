@@ -67,9 +67,9 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
             }
         }
         
-        if userUID != nil {
+        
             fetchFirestoreData()
-        }
+        
         
         
     }
@@ -123,7 +123,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                 }
             }
             self.clientNumber.text = String("\(self.clientCounter.count)")
-            print("NUMERO CLIENTI   \(self.clientCounter.count)")
+            print("NUMERO CLIENTI XXXXXXXXXXX  \(self.clientCounter.count)")
         }
 
         
@@ -148,11 +148,11 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
             
             if self.hoursCounter.isEmpty {
                 self.hoursCounter = ["0"]
-            }
+            }else{
             for r in self.hoursCounter {
                 self.stodo.append(Double(r)!)
+                }
             }
-            
             self.hoursNumber.text = String("\(self.stodo.reduce(0, +))")
         }
         
