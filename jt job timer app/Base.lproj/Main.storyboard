@@ -207,17 +207,17 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="⏰ Worked:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xXO-NZ-iwJ">
-                                                <rect key="frame" x="69" y="269" width="167" height="34"/>
+                                                <rect key="frame" x="39" y="224" width="122" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="aec-q9-nsc"/>
-                                                    <constraint firstAttribute="width" constant="167" id="zY9-3F-daR"/>
+                                                    <constraint firstAttribute="width" constant="122" id="zY9-3F-daR"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-yV-lWg">
-                                                <rect key="frame" x="244" y="269" width="102" height="34"/>
+                                                <rect key="frame" x="169" y="224" width="102" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="102" id="B3D-ya-Gzs"/>
                                                     <constraint firstAttribute="height" constant="34" id="Gqh-Ri-Phh"/>
@@ -226,18 +226,18 @@
                                                 <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Total 🤵‍♂️ Number:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSu-aV-V7V">
-                                                <rect key="frame" x="32" y="177" width="204" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="🤵‍♂️ Number:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSu-aV-V7V">
+                                                <rect key="frame" x="39" y="132" width="123" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="1SR-AG-f3c"/>
-                                                    <constraint firstAttribute="width" constant="204" id="3Id-TP-Dfh"/>
+                                                    <constraint firstAttribute="width" constant="123" id="3Id-TP-Dfh"/>
                                                 </constraints>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shv-Lq-fi0">
-                                                <rect key="frame" x="244" y="177" width="102" height="34"/>
+                                                <rect key="frame" x="169" y="132" width="102" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="1jh-ne-qjT"/>
                                                     <constraint firstAttribute="width" constant="102" id="T8Y-MP-S4e"/>
@@ -247,24 +247,23 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.98695126742611694" blue="0.91734734514922511" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="uUc-yV-lWg" secondAttribute="trailing" constant="68" id="DNM-od-IuO"/>
-                                            <constraint firstAttribute="trailing" secondItem="Shv-Lq-fi0" secondAttribute="trailing" constant="68" id="FQz-Tr-xFt"/>
                                             <constraint firstItem="uUc-yV-lWg" firstAttribute="top" secondItem="Shv-Lq-fi0" secondAttribute="bottom" constant="58" id="Mn8-tV-ihP"/>
-                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="32" id="TGT-DO-wXD"/>
+                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="TGT-DO-wXD"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="top" secondItem="bSu-aV-V7V" secondAttribute="bottom" constant="58" id="VOv-Hj-QCD"/>
-                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="8" symbolic="YES" id="ctF-BK-Gvb"/>
+                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="ctF-BK-Gvb"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="top" secondItem="tlE-Em-A39" secondAttribute="top" constant="30" id="eT1-jm-e9I"/>
-                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="107" id="lyz-sA-wIp"/>
-                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="107" id="m5K-PT-2z4"/>
-                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="8" symbolic="YES" id="otI-5U-4be"/>
-                                            <constraint firstItem="xXO-NZ-iwJ" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="69" id="sfv-of-iMw"/>
+                                            <constraint firstItem="bSu-aV-V7V" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="62" id="lyz-sA-wIp"/>
+                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="62" id="m5K-PT-2z4"/>
+                                            <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="otI-5U-4be"/>
+                                            <constraint firstItem="xXO-NZ-iwJ" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="sfv-of-iMw"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="yTh-cc-mAn"/>
                                             <constraint firstItem="uUc-yV-lWg" firstAttribute="leading" secondItem="xXO-NZ-iwJ" secondAttribute="trailing" constant="8" symbolic="YES" id="zRF-IF-54h"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tlE-Em-A39" firstAttribute="height" secondItem="o4W-hS-Pce" secondAttribute="height" id="3pg-Xp-CyG"/>
                                     <constraint firstItem="tlE-Em-A39" firstAttribute="top" secondItem="ePp-5h-yoq" secondAttribute="top" id="5fa-xE-mnP"/>
@@ -280,7 +279,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="o4W-hS-Pce" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6AV-tv-uQL"/>
                             <constraint firstItem="o4W-hS-Pce" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cQz-0J-cHx"/>
@@ -729,9 +728,9 @@
                     <tabBar key="tabBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ba0-Oz-KjR">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="83"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.82102036886712482" green="0.99169522225092521" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="tintColor" red="0.82102036889999996" green="0.99169522229999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.82102036889999996" green="0.99169522229999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="tintColor" systemColor="systemYellowColor"/>
+                        <color key="barTintColor" systemColor="systemYellowColor"/>
                         <color key="selectedImageTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
@@ -755,7 +754,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R4R-KM-8je">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.82102036889999996" green="0.99169522229999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" systemColor="systemYellowColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -778,7 +777,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h9C-uW-Qks">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.82102036889999996" green="0.99169522229999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" systemColor="systemYellowColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -826,6 +825,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
