@@ -131,6 +131,13 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
  
+        //Fetch hours per client
+        
+        let queryJob = db.collection("")
+        
+        
+        
+        
     }
     
 

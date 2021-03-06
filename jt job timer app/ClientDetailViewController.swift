@@ -67,6 +67,23 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
                         
                     }
                     
+                    //Sorting Array by date
+                    let grabbingDate = [String]()
+                    var convertedArray = [Date]()
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateStyle = .short
+                    
+                    for d in WDday {
+                        let dat = dateFormatter.date(from: d.jobdate)
+                        convertedArray.append(dat!)
+                    }
+                    var ready = grabbingDate.sorted(by: { $0.compare($1) == .orderedDescending })
+                    
+                    for y in ready {
+                        
+                    }
+                    
                     
                     print("\(totoalH) QUESTO è TOATAL H")
                     let newDouble = totoalH.compactMap(Double.init)
