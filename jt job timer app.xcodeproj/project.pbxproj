@@ -15,6 +15,7 @@
 		A015A8DE25948C17002BD06D /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A8DD25948C17002BD06D /* AddClientViewController.swift */; };
 		A03184B0259FA6EA00D637AF /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03184AF259FA6EA00D637AF /* AddJobViewController.swift */; };
 		A03184B725A1A53200D637AF /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03184B625A1A53200D637AF /* RoundTextField.swift */; };
+		A044348625F51AD9002CBFAD /* ClientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044348525F51AD9002CBFAD /* ClientListViewController.swift */; };
 		A04B618A2590AE60009C8607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B61892590AE60009C8607 /* AppDelegate.swift */; };
 		A04B618C2590AE60009C8607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B618B2590AE60009C8607 /* SceneDelegate.swift */; };
 		A04B61912590AE60009C8607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04B618F2590AE60009C8607 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 		A015A8DD25948C17002BD06D /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 		A03184AF259FA6EA00D637AF /* AddJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = "<group>"; };
 		A03184B625A1A53200D637AF /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
+		A044348525F51AD9002CBFAD /* ClientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListViewController.swift; sourceTree = "<group>"; };
 		A04B61862590AE60009C8607 /* jt job timer app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jt job timer app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04B61892590AE60009C8607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A04B618B2590AE60009C8607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				A04B61892590AE60009C8607 /* AppDelegate.swift */,
 				A04B618B2590AE60009C8607 /* SceneDelegate.swift */,
 				A04B618F2590AE60009C8607 /* Main.storyboard */,
+				A044348525F51AD9002CBFAD /* ClientListViewController.swift */,
 				A03184AF259FA6EA00D637AF /* AddJobViewController.swift */,
 				A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */,
 				A099639925B9F7530044ECD2 /* Models.swift */,
@@ -268,6 +271,7 @@
 				A0F1EEF12590C28200DDEC94 /* RoundButton.swift in Sources */,
 				A015A8D22592827A002BD06D /* ClientViewController.swift in Sources */,
 				A04B61942590AE60009C8607 /* jt_job_timer_app.xcdatamodeld in Sources */,
+				A044348625F51AD9002CBFAD /* ClientListViewController.swift in Sources */,
 				A015A8DB259489C8002BD06D /* RoundLabel.swift in Sources */,
 				A07EDA4F259DFFB000E4A585 /* ClientDetailViewController.swift in Sources */,
 				A04B618A2590AE60009C8607 /* AppDelegate.swift in Sources */,
