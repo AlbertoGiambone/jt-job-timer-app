@@ -38,7 +38,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     
 
     
-    var WDSorted = [jobDetail]()
+    var newOrder = [jobDetail]()
     var WDday = [jobDetail]()
     
     func fetchFirestoredata() {
@@ -67,6 +67,11 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
                         
                     }
                     
+                    
+                    newOrder = WDday.sorted(by: {$0.jobdate < $1.jobdate})
+                    
+                    
+                    /*
                     //Sorting Array by date
                     let grabbingDate = [String]()
                     var convertedArray = [Date]()
@@ -78,13 +83,17 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
                         let dat = dateFormatter.date(from: d.jobdate)
                         convertedArray.append(dat!)
                     }
-                    var ready = grabbingDate.sorted(by: { $0.compare($1) == .orderedDescending })
+                    let ready = grabbingDate.sorted(by: { $0.compare($1) == .orderedDescending })
                     
                     for y in ready {
-                        
+                        for u in WDday {
+                            if y == u.jobdate {
+                                WDSorted.append(u)
+                            }
+                        }
                     }
-                    
-                    
+                    print("QUESTO E' IL NUOVO ARRAY \(WDSorted)")
+                    */
                     print("\(totoalH) QUESTO è TOATAL H")
                     let newDouble = totoalH.compactMap(Double.init)
                     counterLabel.text = String("Tot ⏰ \(newDouble.reduce(0, +))")
@@ -126,6 +135,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidDisappear(_ animated: Bool) {
         WDday = [jobDetail]()
         totoalH = [String]()
+        newOrder = [jobDetail]()
     }
     
     
@@ -151,13 +161,13 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return WDday.count
+        return newOrder.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = String("\(WDday[indexPath.row].hoursNumber)h \(WDday[indexPath.row].jobType)")
-        cell.detailTextLabel?.text = String("\(WDday[indexPath.row].jobdate)")
+        cell.textLabel?.text = String("\(newOrder[indexPath.row].hoursNumber)h \(newOrder[indexPath.row].jobType)")
+        cell.detailTextLabel?.text = String("\(newOrder[indexPath.row].jobdate)")
         
         cell.textLabel?.textColor = UIColor.black
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
@@ -175,10 +185,10 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let id = WDday[indexPath.row].docID
+            let id = newOrder[indexPath.row].docID
             db.collection("JobTime").document(id).delete()
             
-            WDday.remove(at: indexPath.row)
+            newOrder.remove(at: indexPath.row)
             self.table.deleteRows(at: [indexPath], with: .fade)
             self.table.reloadData()
         }
@@ -187,7 +197,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     var EDIT_ROW: jobDetail?
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        EDIT_ROW = WDday[indexPath.row]
+        EDIT_ROW = newOrder[indexPath.row]
         performSegue(withIdentifier: "editJob", sender: nil)
     }
     
