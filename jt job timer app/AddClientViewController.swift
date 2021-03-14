@@ -10,6 +10,13 @@ import Firebase
 
 class AddClientViewController: UIViewController {
 
+    //MARK: Passed var
+    
+    var decide = false
+    
+    var CLIENT_DATA: clientDetail?
+    
+    
     //MARK: Connection
     
     @IBOutlet weak var customerName: UITextField!
@@ -35,14 +42,14 @@ class AddClientViewController: UIViewController {
     
     @IBAction func savingClient(_ sender: UIBarButtonItem) {
         
+        let userUID = UserDefaults.standard.object(forKey: "userInfo")
         
-        
-        
+        if decide == false {
         
         if customerName.hasText == true {
             
             var ref: DocumentReference? = nil
-            let userUID = UserDefaults.standard.object(forKey: "userInfo")
+            
             
             ref = db.collection("UserInfo").addDocument(data: [
                 "UID": String(userUID as! String),
@@ -66,6 +73,31 @@ class AddClientViewController: UIViewController {
             saveButton.isEnabled = false
         }
  
+        }
+        if decide == true {
+            if customerName.hasText == true {
+                
+                let DOCREF = db.collection("UserInfo").document((CLIENT_DATA?.CLdocID)!)
+                
+                DOCREF.setData([
+                    "UID": String(userUID as! String),
+                    "name": String("\(customerName.text!)"),
+                    "street": String("\(customerStreet.text ?? "")"),
+                    "post code": String("\(customerPostCode.text ?? "")"),
+                    "province": String("\(customerProvince.text ?? "")"),
+                    "state": String("\(customerState.text ?? "")"),
+                    "e-mail": String("\(customerEmail.text ?? "")")
+                ]) { [self] err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID: \(CLIENT_DATA?.CLdocID ?? "NO ID")")
+                    }
+                }
+                navigationController?.popViewController(animated: true)
+                
+            }
+        }
         
     }
     
@@ -120,6 +152,24 @@ class AddClientViewController: UIViewController {
     }
     
 
+    override func viewWillAppear(_ animated: Bool) {
+        if decide == true {
+            customerName.text = CLIENT_DATA?.CLname ?? ""
+            customerState.text = CLIENT_DATA?.CLstate ?? ""
+            customerEmail.text = CLIENT_DATA?.CLmail ?? ""
+            customerStreet.text = CLIENT_DATA?.CLstreet ?? ""
+            customerProvince.text = CLIENT_DATA?.CLprovince ?? ""
+            customerPostCode.text = CLIENT_DATA?.CLpostCode ?? ""
+        }
+        if decide == false {
+            customerName.text =  ""
+            customerState.text =  ""
+            customerEmail.text =  ""
+            customerStreet.text = ""
+            customerProvince.text = ""
+            customerPostCode.text = ""
+        }
+    }
     
     
     

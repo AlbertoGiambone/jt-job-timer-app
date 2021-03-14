@@ -174,12 +174,11 @@
                         <outlet property="customerState" destination="NZV-aO-aha" id="0B0-y9-9oJ"/>
                         <outlet property="customerStreet" destination="FPi-zu-lTT" id="Gij-hk-6fv"/>
                         <outlet property="saveButton" destination="9uO-cy-k6t" id="4eV-5W-AHR"/>
-                        <segue destination="r0j-ek-cjc" kind="show" identifier="" id="8au-Z9-WHD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thW-ms-Fbe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2319.1999999999998" y="71.514242878560722"/>
+            <point key="canvasLocation" x="671" y="2508"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -327,10 +326,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorInsetReference="fromAutomaticInsets" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2vp-MM-YUL" customClass="RoundTableView" customModule="jt_job_timer_app" customModuleProvider="target">
-                                                <rect key="frame" x="23" y="118" width="371" height="499"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="23" y="85" width="371" height="610"/>
+                                                <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="499" id="R9D-qB-dxw"/>
+                                                    <constraint firstAttribute="height" constant="610" id="R9D-qB-dxw"/>
                                                 </constraints>
                                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -343,7 +342,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="371" height="100"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </tableViewCellContentView>
-                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="20"/>
@@ -377,37 +376,20 @@
                                             <constraint firstItem="2vp-MM-YUL" firstAttribute="leading" secondItem="zYz-ZS-YSf" secondAttribute="leading" constant="23" id="521-X0-7l5"/>
                                             <constraint firstItem="kpw-AS-vYo" firstAttribute="leading" secondItem="zYz-ZS-YSf" secondAttribute="leading" constant="23" id="9f4-UN-FXC"/>
                                             <constraint firstAttribute="trailing" secondItem="2vp-MM-YUL" secondAttribute="trailing" constant="20" id="EzZ-Rn-kMc"/>
-                                            <constraint firstItem="2vp-MM-YUL" firstAttribute="top" secondItem="zYz-ZS-YSf" secondAttribute="top" constant="118" id="Nil-oF-FmF"/>
+                                            <constraint firstItem="2vp-MM-YUL" firstAttribute="top" secondItem="zYz-ZS-YSf" secondAttribute="top" constant="85" id="Nil-oF-FmF"/>
+                                            <constraint firstAttribute="bottom" secondItem="2vp-MM-YUL" secondAttribute="bottom" constant="30" id="qsO-Dh-UcQ"/>
                                             <constraint firstItem="kpw-AS-vYo" firstAttribute="top" secondItem="zYz-ZS-YSf" secondAttribute="top" constant="24" id="tbK-V4-P4z"/>
-                                            <constraint firstItem="2vp-MM-YUL" firstAttribute="top" secondItem="kpw-AS-vYo" secondAttribute="bottom" constant="54" id="wGi-UC-soK"/>
+                                            <constraint firstItem="2vp-MM-YUL" firstAttribute="top" secondItem="kpw-AS-vYo" secondAttribute="bottom" constant="21" id="wGi-UC-soK"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDu-7P-j7h">
-                                        <rect key="frame" x="177" y="637.5" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="61.5" id="0rz-XF-40M"/>
-                                            <constraint firstAttribute="width" constant="60" id="YtU-nt-KXC"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="plus.viewfinder" catalog="system">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="vsT-DZ-oNu" kind="show" id="hWw-P9-5gB"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zYz-ZS-YSf" secondAttribute="bottom" id="DXt-JJ-OiE"/>
                                     <constraint firstItem="zYz-ZS-YSf" firstAttribute="width" secondItem="V2p-RD-wrs" secondAttribute="width" id="J1K-Qq-mBv"/>
-                                    <constraint firstItem="chD-qa-HP4" firstAttribute="bottom" secondItem="hDu-7P-j7h" secondAttribute="bottom" constant="26.5" id="Jng-Tl-Pxr"/>
                                     <constraint firstItem="zYz-ZS-YSf" firstAttribute="top" secondItem="chD-qa-HP4" secondAttribute="top" id="NT2-kj-b0i"/>
-                                    <constraint firstItem="hDu-7P-j7h" firstAttribute="centerX" secondItem="V2p-RD-wrs" secondAttribute="centerX" id="Pps-bm-Tdk"/>
                                     <constraint firstAttribute="trailing" secondItem="zYz-ZS-YSf" secondAttribute="trailing" id="dHl-bV-E62"/>
                                     <constraint firstItem="zYz-ZS-YSf" firstAttribute="height" secondItem="V2p-RD-wrs" secondAttribute="height" id="go4-Q4-Tci"/>
                                     <constraint firstItem="zYz-ZS-YSf" firstAttribute="centerX" secondItem="V2p-RD-wrs" secondAttribute="centerX" id="hpO-bf-BiM"/>
-                                    <constraint firstItem="hDu-7P-j7h" firstAttribute="top" secondItem="2vp-MM-YUL" secondAttribute="bottom" constant="20" id="iP9-aV-4Ji"/>
                                     <constraint firstItem="zYz-ZS-YSf" firstAttribute="bottom" secondItem="chD-qa-HP4" secondAttribute="bottom" id="igt-xA-G4p"/>
                                     <constraint firstItem="zYz-ZS-YSf" firstAttribute="leading" secondItem="chD-qa-HP4" secondAttribute="leading" id="pgW-OS-U8E"/>
                                 </constraints>
@@ -873,9 +855,19 @@
                             <constraint firstItem="Clx-1x-INZ" firstAttribute="trailing" secondItem="s3J-ho-ZhN" secondAttribute="trailing" id="xZ2-1r-2ux"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="CzS-Ns-cm3"/>
+                    <navigationItem key="navigationItem" id="CzS-Ns-cm3">
+                        <barButtonItem key="rightBarButtonItem" landscapeImage="plus" catalog="system" id="Ds3-TB-pZu">
+                            <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="addClient:" destination="dYt-0f-vVM" id="tTb-II-amy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="table" destination="me6-sL-hVl" id="QbS-rp-4Q9"/>
+                        <segue destination="vsT-DZ-oNu" kind="show" identifier="addClient" id="u5f-if-nmN"/>
+                        <segue destination="vsT-DZ-oNu" kind="show" identifier="Edit/View" id="P2S-zm-1Dp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yd6-e2-JqK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -922,13 +914,14 @@
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="vr6-eW-WkD"/>
-        <segue reference="xP6-Cp-oJB"/>
+        <segue reference="P2S-zm-1Dp"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="circle.grid.2x2.fill" catalog="system" width="128" height="112"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.viewfinder" catalog="system" width="128" height="115"/>
         <image name="power" catalog="system" width="128" height="124"/>
         <image name="timer" catalog="system" width="128" height="121"/>

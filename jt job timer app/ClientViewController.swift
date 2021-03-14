@@ -130,12 +130,33 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(self.Cname)
             }
         }
- 
+        
+        let queryJobs = db.collection("JobTime")
+        
+        queryJobs.whereField("JUID", isEqualTo: userUID!)
+        
+        queryJobs.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting job data: \(err)")
+            }else{
+                for document in querySnapshot!.documents {
+                    
+                    let y = document.data()["hours number"] as! String
+                    
+                    let t = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: y, jobdate: document.data()["job date"] as! String, jobType: document.data()["job type"] as! String, docID: document.documentID, clientID: document.data()["clientID"] as! String)
+                    
+                    self.totalH.append(t)
+                }
+            }
+            
+        }
         
     }
     
-
     
+    
+
+    var totalH = [jobDetail]()
     //MARK: View LifeCycle
     
     override func viewDidLoad() {
@@ -156,12 +177,15 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var userUID: String?
     
+    var jobMapped = [String]()
+    
     override func viewWillAppear(_ animated: Bool) {
         
         userUID = UserDefaults.standard.object(forKey: "userInfo") as! String
         
         fetchFirestoreData()
         table.reloadData()
+     
     }
     
     
@@ -177,3 +201,8 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
  
 }
+
+
+/*La lista dei clienti nelle ore mette ai primi posti i clienti con ore già fatturate
+ a fianco del cliente metto il numero di ore
+ poi possiamo inviare la prima beta ad AppStore*/

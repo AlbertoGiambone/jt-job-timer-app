@@ -89,6 +89,75 @@ class ClientListViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
+    var EDIT_CLIENT: clientDetail?
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        EDIT_CLIENT = Cname[indexPath.row]
+        performSegue(withIdentifier: "Edit/View", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let userUID = UserDefaults.standard.object(forKey: "userInfo") as! String
+            
+            let y: String = Cname[indexPath.row].CLname
+            
+            //deletring relative object in clientjob collection
+            
+            db.collection("JobTime").getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documets: \(err)")
+                }else{
+                    for document in querySnapshot!.documents {
+                        
+                        let right = document.data()["JUID"] as! String
+                        
+                        if right == userUID {
+                        
+                        let r = document.data()["client name"] as! String
+                        let i = document.documentID
+                        if r == y {
+                            self.db.collection("JobTime").document(i).delete()
+                            print("deleted JobTime related object")
+                        }else{
+                            print("Error deleting relative document in JobTime Collection")
+                            }
+                        }
+                    }
+                }
+            }
+            
+            db.collection("UserInfo").document(Cname[indexPath.row].CLdocID).delete()
+            
+            Cname.remove(at: indexPath.row)
+            self.table.deleteRows(at: [indexPath], with: .fade)
+            
+            table.reloadData()
+   
+        }
+    }
+    
+    //MARK: Action
+    
+    @IBAction func addClient(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "addClient", sender: nil)
+    }
+    
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Edit/View" {
+            let nextVC = segue.destination as! AddClientViewController
+            nextVC.decide = true
+            nextVC.CLIENT_DATA = EDIT_CLIENT
+        }
+    }
     
     
 }
