@@ -14,12 +14,12 @@ struct jobDetail {
     var JUID: String
     var clientName: String
     var hoursNumber: String
-    var jobdate: String
+    var jobdate: Date
     var jobType: String
     var docID: String
     var clientID: String
     
-    var dict: [String: String] {
+    var dict: [String: Any] {
     return [
     
         "JUID": JUID,

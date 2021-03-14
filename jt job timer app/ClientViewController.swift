@@ -143,7 +143,11 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     let y = document.data()["hours number"] as! String
                     
-                    let t = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: y, jobdate: document.data()["job date"] as! String, jobType: document.data()["job type"] as! String, docID: document.documentID, clientID: document.data()["clientID"] as! String)
+                    let formatter = DateFormatter()
+                    formatter.dateStyle = .short
+                    let d: Date = formatter.date(from: document.data()["job date"] as! String)!
+                    
+                    let t = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: y, jobdate: d, jobType: document.data()["job type"] as! String, docID: document.documentID, clientID: document.data()["clientID"] as! String)
                     
                     self.totalH.append(t)
                 }

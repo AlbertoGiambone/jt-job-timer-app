@@ -60,7 +60,12 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
                         
                         let y = document.data()["hours number"] as! String
                         
-                        let t = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: y, jobdate: document.data()["job date"] as! String, jobType: document.data()["job type"] as! String, docID: document.documentID, clientID: document.data()["clientID"] as! String)
+                        let formatter = DateFormatter()
+                        formatter.dateStyle = .short
+                        let d: Date = formatter.date(from: document.data()["job date"] as! String)!
+                        
+                        
+                        let t = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: y, jobdate: d, jobType: document.data()["job type"] as! String, docID: document.documentID, clientID: document.data()["clientID"] as! String)
                         
                         WDday.append(t)
                         totoalH.append(y)
@@ -69,31 +74,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
                     
                     
                     newOrder = WDday.sorted(by: {$0.jobdate < $1.jobdate})
-                    
-                    
-                    /*
-                    //Sorting Array by date
-                    let grabbingDate = [String]()
-                    var convertedArray = [Date]()
-                    
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateStyle = .short
-                    
-                    for d in WDday {
-                        let dat = dateFormatter.date(from: d.jobdate)
-                        convertedArray.append(dat!)
-                    }
-                    let ready = grabbingDate.sorted(by: { $0.compare($1) == .orderedDescending })
-                    
-                    for y in ready {
-                        for u in WDday {
-                            if y == u.jobdate {
-                                WDSorted.append(u)
-                            }
-                        }
-                    }
-                    print("QUESTO E' IL NUOVO ARRAY \(WDSorted)")
-                    */
+        
                     print("\(totoalH) QUESTO è TOATAL H")
                     let newDouble = totoalH.compactMap(Double.init)
                     counterLabel.text = String("Tot ⏰ \(newDouble.reduce(0, +))")
@@ -167,7 +148,14 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = String("\(newOrder[indexPath.row].hoursNumber)h \(newOrder[indexPath.row].jobType)")
-        cell.detailTextLabel?.text = String("\(newOrder[indexPath.row].jobdate)")
+        
+        let day = newOrder[indexPath.row].jobdate
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateStyle = .short
+        let stringDate = dayFormatter.string(from: day)
+        
+        
+        cell.detailTextLabel?.text = String("\(stringDate)")
         
         cell.textLabel?.textColor = UIColor.black
         cell.textLabel?.font = UIFont.systemFont(ofSize: 15, weight: .bold)
