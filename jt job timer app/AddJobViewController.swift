@@ -71,7 +71,12 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         if decide == true {
             hNumber.text = EditVC?.hoursNumber
             jobType.text = EditVC?.jobType
-            jobDate.text = String("\(EditVC?.jobdate)")
+            
+            let day = EditVC?.jobdate
+            let dayFormatter = DateFormatter()
+            dayFormatter.dateStyle = .short
+            jobDate.text = dayFormatter.string(from: day!)
+            
         }
     }
     

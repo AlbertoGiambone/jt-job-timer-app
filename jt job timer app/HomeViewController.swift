@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseUI
 import Firebase
+import Charts
 
 
 class HomeViewController: UIViewController, FUIAuthDelegate {
@@ -21,6 +22,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     
     @IBOutlet weak var hoursNumber: UITextField!
     
+    @IBOutlet weak var chart: PieChartView!
     
     
     

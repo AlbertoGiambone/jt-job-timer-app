@@ -73,7 +73,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
                     }
                     
                     
-                    newOrder = WDday.sorted(by: {$0.jobdate < $1.jobdate})
+                    newOrder = WDday.sorted(by: {$0.jobdate > $1.jobdate})
         
                     print("\(totoalH) QUESTO è TOATAL H")
                     let newDouble = totoalH.compactMap(Double.init)
