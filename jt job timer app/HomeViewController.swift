@@ -22,7 +22,6 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     
     @IBOutlet weak var hoursNumber: UITextField!
     
-    @IBOutlet weak var chart: PieChartView!
     
     
     
@@ -100,6 +99,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     var hoursCounter = [String]()
     var stodo = [Double]()
     
+    
     func fetchFirestoreData() {
         
         userUID = UserDefaults.standard.object(forKey: "userInfo") as? String
@@ -143,8 +143,12 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                     let r = document.data()["JUID"] as! String
                     
                     if r == self.userUID {
-                    self.hoursCounter.append(document.data()["hours number"] as! String)
+                    
+                        let t = document.data()["hours number"] as! String
+                        self.hoursCounter.append(t)
+                        
                     }
+                    
                 }
             }
             
@@ -157,11 +161,10 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
             }
             self.hoursNumber.text = String("\(self.stodo.reduce(0, +))")
         }
+     
         
-        
+    
     }
-    
-    
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let user = authDataResult?.user {
