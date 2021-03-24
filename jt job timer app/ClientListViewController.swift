@@ -40,7 +40,7 @@ class ClientListViewController: UIViewController, UITableViewDelegate, UITableVi
                     
                     if t.UID == userUID as! String {
                         self.Cname.append(t)
-                    }
+                    }else{}
                 }
             }
             self.table.reloadData()

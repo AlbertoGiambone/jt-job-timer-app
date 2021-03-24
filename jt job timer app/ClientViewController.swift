@@ -175,7 +175,7 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        Cname = [clientDetail]()
+        Cname.removeAll()
     }
     
     
