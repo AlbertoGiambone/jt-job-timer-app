@@ -127,10 +127,9 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                     self.table.reloadData()
                 }
-                print(self.Cname)
             }
         }
-        
+        /*
         let queryJobs = db.collection("JobTime")
         
         queryJobs.whereField("JUID", isEqualTo: userUID!)
@@ -154,13 +153,12 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
             
         }
-        
+        */
     }
     
     
     
 
-    var totalH = [jobDetail]()
     //MARK: View LifeCycle
     
     override func viewDidLoad() {
@@ -181,11 +179,10 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var userUID: String?
     
-    var jobMapped = [String]()
     
     override func viewWillAppear(_ animated: Bool) {
         
-        userUID = UserDefaults.standard.object(forKey: "userInfo") as! String
+        userUID = UserDefaults.standard.object(forKey: "userInfo") as? String
         
         fetchFirestoreData()
         table.reloadData()
