@@ -1,1 +1,1 @@
-JT Job Time is an app for track itme spent on client job
+JT Job Time is an app for track time spent on client job
