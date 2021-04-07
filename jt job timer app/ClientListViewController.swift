@@ -82,7 +82,7 @@ class ClientListViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = Cname[indexPath.row].CLname
-        cell.textLabel?.font = UIFont(name: "Galvji", size: 15)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         cell.textLabel?.textColor = .darkGray
         
         

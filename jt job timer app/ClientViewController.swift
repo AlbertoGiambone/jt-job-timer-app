@@ -35,6 +35,7 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = table.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = String(Cname[indexPath.row].CLname)
         cell.textLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        cell.textLabel?.textColor = .darkGray
         //cell.textLabel?.font = UIFont(name: "Galvji", size: 11)
         return cell
     }
@@ -97,65 +98,58 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     //MARK: Fetching Firebase Data for TableView
-    
-    var ClientNumber = [String]()
+
     var Cname = [clientDetail]()
+       
+       
+       
+       func fetchFirestoreData() {
+           
+           
+           let queryUser = db.collection("UserInfo")
+           
+           queryUser.whereField("UID", isEqualTo: userUID!)
+           
+           queryUser.getDocuments() { (querySnapshot, err) in
+               if let err = err {
+                   print("Error getting documents: \(err)")
+               } else {
+                   for document in querySnapshot!.documents {
+                       print("\(document.documentID) => \(document.data()["name"] ?? "")")
+                       
+                       
+                       let t = clientDetail(UID: document.data()["UID"] as! String , CLname: document.data()["name"] as! String, CLmail: document.data()["e-mail"] as! String, CLpostCode: document.data()["post code"] as! String, CLprovince: document.data()["province"] as! String, CLstate: document.data()["state"] as! String, CLstreet: document.data()["street"] as! String, CLdocID: document.documentID)
+                           
+                       if t.UID == self.userUID {
+                       self.Cname.append(t)
+                       
+                       }
+                       
+                       self.table.reloadData()
+                   }
+               }
+           }
+       }
     
-    
-    
-    func fetchFirestoreData() {
+    func fetchTimeWorked() {
         
+        let queryTime = db.collection("JobTime")
         
-        let queryUser = db.collection("UserInfo")
-        
-        queryUser.whereField("UID", isEqualTo: userUID!)
-        
-        queryUser.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data()["name"] ?? "")")
-                    
-                    
-                    let t = clientDetail(UID: document.data()["UID"] as! String , CLname: document.data()["name"] as! String, CLmail: document.data()["e-mail"] as! String, CLpostCode: document.data()["post code"] as! String, CLprovince: document.data()["province"] as! String, CLstate: document.data()["state"] as! String, CLstreet: document.data()["street"] as! String, CLdocID: document.documentID)
-                        
-                    if t.UID == self.userUID {
-                    self.Cname.append(t)
-                    
-                    }
-                    
-                    self.table.reloadData()
-                }
-            }
-        }
-        /*
-        let queryJobs = db.collection("JobTime")
-        
-        queryJobs.whereField("JUID", isEqualTo: userUID!)
-        
-        queryJobs.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting job data: \(err)")
-            }else{
-                for document in querySnapshot!.documents {
-                    
-                    let y = document.data()["hours number"] as! String
-                    
-                    let formatter = DateFormatter()
-                    formatter.dateStyle = .short
-                    let d: Date = formatter.date(from: document.data()["job date"] as! String)!
-                    
-                    let t = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: y, jobdate: d, jobType: document.data()["job type"] as! String, docID: document.documentID, clientID: document.data()["clientID"] as! String)
-                    
-                    self.totalH.append(t)
-                }
-            }
+        queryTime.whereField("JUID", isEqualTo: userUID!).getDocuments() { (querySnapshot, err) in
             
+            if let err = err {
+                print("error getting job time data \(err)")
+            }else{
+                
+                for doc in querySnapshot!.documents {
+                    
+                }
+            }
         }
-        */
+        
+                
+        
     }
-    
     
     
 
@@ -177,17 +171,17 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    var userUID: String?
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-        userUID = UserDefaults.standard.object(forKey: "userInfo") as? String
-        
-        fetchFirestoreData()
-        table.reloadData()
-     
-    }
+        var userUID: String?
+            
+            
+            override func viewWillAppear(_ animated: Bool) {
+                
+                userUID = UserDefaults.standard.object(forKey: "userInfo") as? String
+                
+                fetchFirestoreData()
+                table.reloadData()
+             
+            }
     
     
     

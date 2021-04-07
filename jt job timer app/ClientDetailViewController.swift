@@ -22,15 +22,15 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var table: UITableView!
     
     @IBOutlet weak var counterLabel: UILabel!
+        
+    @IBOutlet weak var segment: UISegmentedControl!
     
     
-    
+
     @IBAction func AddJob(_ sender: UIButton) {
         performSegue(withIdentifier: "addJob", sender: self)
     }
-    
-    
-    
+
     
     //MARK: Firestore var
     
@@ -104,6 +104,9 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
         table.delegate = self
         
         overrideUserInterfaceStyle = .light
+
+        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
+        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
         
     }
     
@@ -180,7 +183,9 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
             self.table.deleteRows(at: [indexPath], with: .fade)
             self.table.reloadData()
         }
+        
     }
+    
     
     
     var EDIT_ROW: jobDetail?
@@ -189,5 +194,8 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
         performSegue(withIdentifier: "editJob", sender: nil)
     }
     
+
     
 }
+
+
