@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B8C89AE2228A155C5D8360D /* Pods_jt_job_timer_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA76E0596C3314E51593A28 /* Pods_jt_job_timer_app.framework */; };
+		A014D9EE261E0DD4007CD017 /* DetailCollectionCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014D9ED261E0DD4007CD017 /* DetailCollectionCellCollectionViewCell.swift */; };
 		A015A8D22592827A002BD06D /* ClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A8D125928279002BD06D /* ClientViewController.swift */; };
 		A015A8D52593508E002BD06D /* RoundTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A8D42593508D002BD06D /* RoundTableViewCell.swift */; };
 		A015A8D825935104002BD06D /* RoundTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A8D725935104002BD06D /* RoundTableView.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		410BC18F2161DF8106BE201B /* Pods-jt job timer app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jt job timer app.release.xcconfig"; path = "Target Support Files/Pods-jt job timer app/Pods-jt job timer app.release.xcconfig"; sourceTree = "<group>"; };
+		A014D9ED261E0DD4007CD017 /* DetailCollectionCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		A015A8D125928279002BD06D /* ClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewController.swift; sourceTree = "<group>"; };
 		A015A8D42593508D002BD06D /* RoundTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTableViewCell.swift; sourceTree = "<group>"; };
 		A015A8D725935104002BD06D /* RoundTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTableView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				A044348525F51AD9002CBFAD /* ClientListViewController.swift */,
 				A03184AF259FA6EA00D637AF /* AddJobViewController.swift */,
 				A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */,
+				A014D9ED261E0DD4007CD017 /* DetailCollectionCellCollectionViewCell.swift */,
 				A099639925B9F7530044ECD2 /* Models.swift */,
 				A015A8DD25948C17002BD06D /* AddClientViewController.swift */,
 				A015A8D125928279002BD06D /* ClientViewController.swift */,
@@ -271,6 +274,7 @@
 				A0F1EEF12590C28200DDEC94 /* RoundButton.swift in Sources */,
 				A015A8D22592827A002BD06D /* ClientViewController.swift in Sources */,
 				A04B61942590AE60009C8607 /* jt_job_timer_app.xcdatamodeld in Sources */,
+				A014D9EE261E0DD4007CD017 /* DetailCollectionCellCollectionViewCell.swift in Sources */,
 				A044348625F51AD9002CBFAD /* ClientListViewController.swift in Sources */,
 				A015A8DB259489C8002BD06D /* RoundLabel.swift in Sources */,
 				A07EDA4F259DFFB000E4A585 /* ClientDetailViewController.swift in Sources */,

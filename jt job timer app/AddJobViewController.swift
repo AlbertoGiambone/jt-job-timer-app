@@ -159,6 +159,7 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
             
         }else{
             saveButton.isEnabled = false
+            print("NOTHING IS ENABLED!")
             }
         }
         if decide == true {

@@ -8,7 +8,9 @@
 import UIKit
 import Firebase
 
-class ClientDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    
 
     //MARK: Passed var from ClientViewController
     
@@ -19,12 +21,11 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     @IBOutlet weak var clientName: RoundLabel!
     
-    @IBOutlet weak var table: UITableView!
-    
     @IBOutlet weak var counterLabel: UILabel!
         
     @IBOutlet weak var segment: UISegmentedControl!
     
+    @IBOutlet weak var collection: UICollectionView!
     
 
     @IBAction func AddJob(_ sender: UIButton) {
@@ -79,7 +80,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
                     let newDouble = totoalH.compactMap(Double.init)
                     counterLabel.text = String("Tot ⏰ \(newDouble.reduce(0, +))")
                     
-                    self.table.reloadData()
+                    self.collection.reloadData()
                 }
                 
                
@@ -100,11 +101,16 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
 
         clientName.text = String("🙋‍♂️ \(clientNameFromCVC!)")
         
-        table.dataSource = self
-        table.delegate = self
-        
         overrideUserInterfaceStyle = .light
 
+        collection.delegate = self
+        collection.dataSource = self
+        
+        let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        collection.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
+        
+        
+        
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
         
@@ -112,7 +118,7 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewWillAppear(_ animated: Bool) {
         fetchFirestoredata()
-        table.reloadData()
+        collection.reloadData()
     }
     
     
@@ -121,6 +127,36 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
         totoalH = [String]()
         newOrder = [jobDetail]()
     }
+    
+    
+    
+    //MARK: Collection Setup
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return newOrder.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DetailCollectionCellCollectionViewCell
+        
+        
+        let textInTheLabel = String("\(newOrder[indexPath.row].hoursNumber)h \(newOrder[indexPath.row].jobType)")
+        cell.textLabel.text = textInTheLabel
+        
+        let day = newOrder[indexPath.row].jobdate
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateStyle = .short
+        let stringDate = dayFormatter.string(from: day)
+        
+        cell.dateLabel.text = String("\(stringDate)")
+        
+        return cell
+    }
+    
     
     
     //MARK: Segue
@@ -133,12 +169,14 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
         }
             if segue.identifier == "editJob"  {
                 let nextVC = segue.destination as! AddJobViewController
-                 nextVC.EditVC = EDIT_ROW
+                 //nextVC.EditVC = EDIT_ROW
                 nextVC.decide = true
         }
     }
     
+    /*
     //MARK: tableview settings
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -193,9 +231,8 @@ class ClientDetailViewController: UIViewController, UITableViewDelegate, UITable
         EDIT_ROW = newOrder[indexPath.row]
         performSegue(withIdentifier: "editJob", sender: nil)
     }
-    
+    */
 
-    
+
+
 }
-
-
