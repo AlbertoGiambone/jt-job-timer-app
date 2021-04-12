@@ -190,6 +190,14 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func deleteItem(_ sender: UIBarButtonItem) {
+        
+        
+        db.collection("JobTime").document(EditVC!.docID).delete()
+        print("DOCUMENT DELETE BY TRASH!")
+        navigationController?.popViewController(animated: true)
+        
+    }
     
     
     

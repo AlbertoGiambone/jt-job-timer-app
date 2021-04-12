@@ -103,13 +103,44 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         
         overrideUserInterfaceStyle = .light
 
+        //Collection Settings
         collection.delegate = self
         collection.dataSource = self
         
-        let layoutConfig = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
         collection.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
         
+        /*
+        layoutConfig.trailingSwipeActionsConfigurationProvider = {  [unowned self] (indexPath) in
         
+            let action1 = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
+                    
+                    // 3
+                    // Handle swipe action by showing alert message
+                let id = newOrder[indexPath.row].docID
+                db.collection("JobTime").document(id).delete()
+                    
+                
+                newOrder.remove(at: indexPath.row)
+                collection.reloadData()
+                
+                
+                //newOrder.remove(at: indexPath.row)
+                //self.table.deleteRows(at: [indexPath], with: .fade)
+                //self.table.reloadData()
+                    // 4
+                    // Trigger the action completion handler
+                    completion(true)
+                }
+            
+            action1.backgroundColor = .systemRed
+            
+            return UISwipeActionsConfiguration(actions: [action1])
+            
+        }
+        */
+        
+        //Segment settings
         
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
         segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
@@ -159,6 +190,15 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     
+    var EDIT_ROW: jobDetail?
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        EDIT_ROW = newOrder[indexPath.row]
+        performSegue(withIdentifier: "editJob", sender: nil)
+    }
+    
+   
+    
+    
     //MARK: Segue
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -169,7 +209,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         }
             if segue.identifier == "editJob"  {
                 let nextVC = segue.destination as! AddJobViewController
-                 //nextVC.EditVC = EDIT_ROW
+                nextVC.EditVC = EDIT_ROW
                 nextVC.decide = true
         }
     }

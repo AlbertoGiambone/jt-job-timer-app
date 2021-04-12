@@ -551,7 +551,13 @@
                             <constraint firstItem="UnH-Ap-jOz" firstAttribute="top" secondItem="9fz-qI-5nO" secondAttribute="top" id="xt2-rG-raz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="N79-Xu-i40"/>
+                    <navigationItem key="navigationItem" id="N79-Xu-i40">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="RT5-58-wV4">
+                            <connections>
+                                <action selector="deleteItem:" destination="0QZ-je-O2m" id="VaG-83-lhF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="hNumber" destination="EHu-hu-OZt" id="KMx-Os-iCh"/>
                         <outlet property="jobDate" destination="5Zh-zk-G7i" id="4kd-F0-yr5"/>
@@ -612,22 +618,22 @@
                                                 <rect key="frame" x="26" y="157" width="362" height="480"/>
                                                 <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X4t-Al-iIo">
-                                                    <size key="itemSize" width="362" height="45"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bj1-K9-wv5">
+                                                    <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="uJO-IB-hp3" customClass="DetailCollectionCellCollectionViewCell" customModule="jt_job_timer_app" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="362" height="45"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="362" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0ya-Xa-Evs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="362" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="362" height="50"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDW-Yr-Q2t">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="362" height="35"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDW-Yr-Q2t">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="362" height="40"/>
                                                                     <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="7lh-9n-8sn"/>
@@ -637,7 +643,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYx-a4-XFI">
-                                                                    <rect key="frame" x="0.0" y="35" width="362" height="10"/>
+                                                                    <rect key="frame" x="0.0" y="40" width="362" height="10"/>
                                                                     <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="10" id="00T-c4-7M4"/>
@@ -660,7 +666,7 @@
                                                             </constraints>
                                                         </collectionViewCellContentView>
                                                         <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <size key="customSize" width="362" height="45"/>
+                                                        <size key="customSize" width="362" height="50"/>
                                                         <connections>
                                                             <outlet property="dateLabel" destination="cYx-a4-XFI" id="U1r-lt-lGI"/>
                                                             <outlet property="textLabel" destination="dDW-Yr-Q2t" id="3Jg-JO-EiT"/>
