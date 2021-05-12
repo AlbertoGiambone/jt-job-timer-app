@@ -23,11 +23,10 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBOutlet weak var counterLabel: UILabel!
         
-    @IBOutlet weak var segment: UISegmentedControl!
-    
     @IBOutlet weak var collection: UICollectionView!
     
-
+    @IBOutlet weak var billButton: UIButton!
+    
     @IBAction func AddJob(_ sender: UIButton) {
         performSegue(withIdentifier: "addJob", sender: self)
     }
@@ -92,6 +91,20 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     
+    func billBTapped() {
+        if billButton.isEnabled == true {
+            billButton.titleLabel?.text = "cancel"
+        }else{
+            billButton.titleLabel?.text = "Select"
+            
+            /*controllare che i bottoni seleced ed hidden siano collegati correttamente e messi bene nel codice*/
+            
+            
+        }
+    }
+    
+    
+    
     //MARK: View Lifecycle
     
     var totoalH = [String]()
@@ -99,6 +112,10 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        billButton.isHidden = true
+        billButton.isEnabled = false
+        
         clientName.text = String("🙋‍♂️ \(clientNameFromCVC!)")
         
         overrideUserInterfaceStyle = .light
@@ -110,40 +127,14 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         var layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
         collection.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
         
-        /*
-        layoutConfig.trailingSwipeActionsConfigurationProvider = {  [unowned self] (indexPath) in
         
-            let action1 = UIContextualAction(style: .normal, title: "Delete") { (action, view, completion) in
-                    
-                    // 3
-                    // Handle swipe action by showing alert message
-                let id = newOrder[indexPath.row].docID
-                db.collection("JobTime").document(id).delete()
-                    
-                
-                newOrder.remove(at: indexPath.row)
-                collection.reloadData()
-                
-                
-                //newOrder.remove(at: indexPath.row)
-                //self.table.deleteRows(at: [indexPath], with: .fade)
-                //self.table.reloadData()
-                    // 4
-                    // Trigger the action completion handler
-                    completion(true)
-                }
-            
-            action1.backgroundColor = .systemRed
-            
-            return UISwipeActionsConfiguration(actions: [action1])
-            
-        }
-        */
+        billBTapped()
         
+    
         //Segment settings
         
-        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
-        segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
+        //segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
+        //segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: UIControl.State.normal)
         
     }
     
@@ -177,6 +168,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         
         let textInTheLabel = String("\(newOrder[indexPath.row].hoursNumber)h \(newOrder[indexPath.row].jobType)")
         cell.textLabel.text = textInTheLabel
+        cell.textLabel.backgroundColor = UIColor(red: 255/255, green: 238/255, blue: 153/255, alpha: 1)
         
         let day = newOrder[indexPath.row].jobdate
         let dayFormatter = DateFormatter()
@@ -184,17 +176,28 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         let stringDate = dayFormatter.string(from: day)
         
         cell.dateLabel.text = String("\(stringDate)")
+        cell.dateLabel.backgroundColor = UIColor(red: 255/255, green: 238/255, blue: 153/255, alpha: 1)
         
         return cell
     }
     
     
     
+    var OBJECT_TO_MOVE = [jobDetail]()
     var EDIT_ROW: jobDetail?
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        EDIT_ROW = newOrder[indexPath.row]
-        performSegue(withIdentifier: "editJob", sender: nil)
+        
+    
+            EDIT_ROW = newOrder[indexPath.row]
+            performSegue(withIdentifier: "editJob", sender: nil)
+        
+        
     }
+    
+
+    
+    
+    
     
    
     

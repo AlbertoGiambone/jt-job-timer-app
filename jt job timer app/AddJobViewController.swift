@@ -29,6 +29,13 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var saveButton: RoundButton!
     
+    @IBOutlet weak var deleteBarButton: UIBarButtonItem!
+    
+    @IBOutlet weak var markAsBilled: UIButton!
+    
+    
+    
+    
     
     //MARK: limit text to number
     
@@ -77,7 +84,15 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
             dayFormatter.dateStyle = .short
             jobDate.text = dayFormatter.string(from: day!)
             
+        }else{
+            deleteBarButton.isEnabled = false
+            deleteBarButton.tintColor = .placeholderText
+            markAsBilled.isEnabled = false
+            markAsBilled.backgroundColor = .none
         }
+        
+        markAsBilled.layer.cornerRadius = 5
+        
     }
     
     
@@ -119,6 +134,7 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         overrideUserInterfaceStyle = .light
         
         hNumber.delegate = self
+        
         
     }
     
@@ -199,8 +215,39 @@ class AddJobViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    //MARK: Move item to billed list
     
     
+    @IBAction func moveToBilled(_ sender: UIButton) {
+        
+        let userUID = UserDefaults.standard.object(forKey: "userInfo")
+        
+        let HN = hNumber.text
+        
+        if Double(HN!) == nil {
+            markAsBilled.isEnabled = false
+            print(" Billed Button Disabled!")
+        }else{
+            db.collection("JobBilled").addDocument(data: [
+                "JUID": String(userUID as! String),
+                "client name": String(EditVC!.clientName),
+                "hours number": String(HN ?? "0"),
+                "job type": String(jobType.text ?? ""),
+                "job date": String(jobDate.text ??  ""),
+                "clientID": String(EditVC?.clientID ?? "NO CLIENT ID")
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    //print("Document added with ID: \(ref.documentID)")
+                    }
+                }
+            
+            db.collection("JobTime").document(EditVC!.docID).delete()
+            print("Document moved to JobBilled and deleted from JobTime")
+            navigationController?.popViewController(animated: true)
+        }
+    }
     
 
 }
