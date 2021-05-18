@@ -14,6 +14,7 @@
 		A015A8D825935104002BD06D /* RoundTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A8D725935104002BD06D /* RoundTableView.swift */; };
 		A015A8DB259489C8002BD06D /* RoundLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A8DA259489C8002BD06D /* RoundLabel.swift */; };
 		A015A8DE25948C17002BD06D /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A015A8DD25948C17002BD06D /* AddClientViewController.swift */; };
+		A02E70D6264EAD8B00BBCE14 /* BilledViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E70D5264EAD8B00BBCE14 /* BilledViewController.swift */; };
 		A03184B0259FA6EA00D637AF /* AddJobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03184AF259FA6EA00D637AF /* AddJobViewController.swift */; };
 		A03184B725A1A53200D637AF /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03184B625A1A53200D637AF /* RoundTextField.swift */; };
 		A044348625F51AD9002CBFAD /* ClientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A044348525F51AD9002CBFAD /* ClientListViewController.swift */; };
@@ -28,6 +29,7 @@
 		A07EDA4F259DFFB000E4A585 /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */; };
 		A099639A25B9F7530044ECD2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099639925B9F7530044ECD2 /* Models.swift */; };
 		A0F1EEF12590C28200DDEC94 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1EEF02590C28200DDEC94 /* RoundButton.swift */; };
+		A0F9A5032652A34C00D34F58 /* BilledCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F9A5022652A34C00D34F58 /* BilledCellCollectionViewCell.swift */; };
 		A0FC94592591F9E700BC42DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0FC94582591F9E700BC42DA /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,7 @@
 		A015A8D725935104002BD06D /* RoundTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundTableView.swift; sourceTree = "<group>"; };
 		A015A8DA259489C8002BD06D /* RoundLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundLabel.swift; sourceTree = "<group>"; };
 		A015A8DD25948C17002BD06D /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
+		A02E70D5264EAD8B00BBCE14 /* BilledViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilledViewController.swift; sourceTree = "<group>"; };
 		A03184AF259FA6EA00D637AF /* AddJobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobViewController.swift; sourceTree = "<group>"; };
 		A03184B625A1A53200D637AF /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		A044348525F51AD9002CBFAD /* ClientListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		A099639925B9F7530044ECD2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A0F1A4F5259201A60033BF8E /* jt job timer app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "jt job timer app.entitlements"; sourceTree = "<group>"; };
 		A0F1EEF02590C28200DDEC94 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		A0F9A5022652A34C00D34F58 /* BilledCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilledCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		A0FC94582591F9E700BC42DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BBA76E0596C3314E51593A28 /* Pods_jt_job_timer_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jt_job_timer_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88E16EB3AC5E78F72F7731B /* Pods-jt job timer app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jt job timer app.debug.xcconfig"; path = "Target Support Files/Pods-jt job timer app/Pods-jt job timer app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 				A04B61892590AE60009C8607 /* AppDelegate.swift */,
 				A04B618B2590AE60009C8607 /* SceneDelegate.swift */,
 				A04B618F2590AE60009C8607 /* Main.storyboard */,
+				A02E70D5264EAD8B00BBCE14 /* BilledViewController.swift */,
+				A0F9A5022652A34C00D34F58 /* BilledCellCollectionViewCell.swift */,
 				A044348525F51AD9002CBFAD /* ClientListViewController.swift */,
 				A03184AF259FA6EA00D637AF /* AddJobViewController.swift */,
 				A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */,
@@ -271,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A02E70D6264EAD8B00BBCE14 /* BilledViewController.swift in Sources */,
 				A0F1EEF12590C28200DDEC94 /* RoundButton.swift in Sources */,
 				A015A8D22592827A002BD06D /* ClientViewController.swift in Sources */,
 				A04B61942590AE60009C8607 /* jt_job_timer_app.xcdatamodeld in Sources */,
@@ -278,6 +285,7 @@
 				A044348625F51AD9002CBFAD /* ClientListViewController.swift in Sources */,
 				A015A8DB259489C8002BD06D /* RoundLabel.swift in Sources */,
 				A07EDA4F259DFFB000E4A585 /* ClientDetailViewController.swift in Sources */,
+				A0F9A5032652A34C00D34F58 /* BilledCellCollectionViewCell.swift in Sources */,
 				A04B618A2590AE60009C8607 /* AppDelegate.swift in Sources */,
 				A015A8D825935104002BD06D /* RoundTableView.swift in Sources */,
 				A04B618C2590AE60009C8607 /* SceneDelegate.swift in Sources */,

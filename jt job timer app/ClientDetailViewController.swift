@@ -24,15 +24,13 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var counterLabel: UILabel!
         
     @IBOutlet weak var collection: UICollectionView!
-    
-    @IBOutlet weak var billButton: UIButton!
-    
+        
     @IBAction func AddJob(_ sender: UIButton) {
         performSegue(withIdentifier: "addJob", sender: self)
     }
 
     
-    //MARK: Firestore var
+    //MARK: Firestore fetching
     
     let db = Firestore.firestore()
     
@@ -91,17 +89,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     
-    func billBTapped() {
-        if billButton.isEnabled == true {
-            billButton.titleLabel?.text = "cancel"
-        }else{
-            billButton.titleLabel?.text = "Select"
-            
-            /*controllare che i bottoni seleced ed hidden siano collegati correttamente e messi bene nel codice*/
-            
-            
-        }
-    }
+    
     
     
     
@@ -111,10 +99,6 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        billButton.isHidden = true
-        billButton.isEnabled = false
         
         clientName.text = String("🙋‍♂️ \(clientNameFromCVC!)")
         
@@ -124,13 +108,9 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         collection.delegate = self
         collection.dataSource = self
         
-        var layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
+        let layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
         collection.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
         
-        
-        billBTapped()
-        
-    
         //Segment settings
         
         //segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
@@ -186,11 +166,9 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     var OBJECT_TO_MOVE = [jobDetail]()
     var EDIT_ROW: jobDetail?
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
     
             EDIT_ROW = newOrder[indexPath.row]
             performSegue(withIdentifier: "editJob", sender: nil)
-        
         
     }
     
