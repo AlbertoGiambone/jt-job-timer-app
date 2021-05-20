@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import Charts
 
 class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -25,6 +26,9 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         
     @IBOutlet weak var collection: UICollectionView!
         
+    @IBOutlet weak var graphView: BarChartView!
+    
+    
     @IBAction func AddJob(_ sender: UIButton) {
         performSegue(withIdentifier: "addJob", sender: self)
     }
@@ -82,7 +86,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
                 
                
             }
-        
+            
         
         }
     }
@@ -111,6 +115,9 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         let layoutConfig = UICollectionLayoutListConfiguration(appearance: .plain)
         collection.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
         
+        
+        updateChart()
+        
         //Segment settings
         
         //segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.selected)
@@ -129,6 +136,18 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         totoalH = [String]()
         newOrder = [jobDetail]()
     }
+    
+    
+    //MARK: Chart settings
+    
+
+    func updateChart() {
+        
+        
+        
+        
+    }
+    
     
     
     
