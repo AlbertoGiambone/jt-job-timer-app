@@ -629,7 +629,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="1029"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-IY-f8B">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1038"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1029"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d7z-u4-qnQ" customClass="RoundLabel" customModule="jt_job_timer_app" customModuleProvider="target">
                                                 <rect key="frame" x="26" y="8" width="313" height="40"/>
@@ -666,6 +666,9 @@
                                                 <rect key="frame" x="26" y="420" width="362" height="468"/>
                                                 <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="468" id="pbm-hg-Do2"/>
+                                                </constraints>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bj1-K9-wv5">
                                                     <size key="itemSize" width="128" height="128"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -743,6 +746,7 @@
                                             <constraint firstItem="kVC-rX-hk0" firstAttribute="centerX" secondItem="Ayc-IY-f8B" secondAttribute="centerX" id="hqV-dF-QoQ"/>
                                             <constraint firstItem="kVC-rX-hk0" firstAttribute="top" secondItem="emq-Jf-X3Q" secondAttribute="bottom" constant="73" id="iBd-7R-A6G"/>
                                             <constraint firstItem="pqj-Kk-G1V" firstAttribute="centerX" secondItem="Ayc-IY-f8B" secondAttribute="centerX" constant="-75.5" id="kLE-Uu-3XU"/>
+                                            <constraint firstAttribute="bottom" secondItem="kVC-rX-hk0" secondAttribute="bottom" constant="6.5" id="n1N-4Y-JUE"/>
                                             <constraint firstItem="emq-Jf-X3Q" firstAttribute="leading" secondItem="Ayc-IY-f8B" secondAttribute="leading" constant="26" id="udH-5t-kPb"/>
                                             <constraint firstAttribute="trailing" secondItem="pqj-Kk-G1V" secondAttribute="trailing" constant="177" id="wDG-LR-mNX"/>
                                         </constraints>
@@ -757,14 +761,15 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Ayc-IY-f8B" firstAttribute="height" secondItem="WAj-oM-yRb" secondAttribute="height" id="1rA-hl-TEU"/>
                                     <constraint firstItem="pn4-6i-Fu7" firstAttribute="top" secondItem="77X-wi-bTE" secondAttribute="top" constant="150" id="2zI-cb-748"/>
                                     <constraint firstAttribute="trailing" secondItem="Ayc-IY-f8B" secondAttribute="trailing" id="5Lz-8A-VoA"/>
                                     <constraint firstItem="Ayc-IY-f8B" firstAttribute="leading" secondItem="77X-wi-bTE" secondAttribute="leading" id="AJx-YY-Y6r"/>
                                     <constraint firstItem="Ayc-IY-f8B" firstAttribute="top" secondItem="4Sv-HK-oVL" secondAttribute="top" id="Gg0-1U-ak3"/>
+                                    <constraint firstItem="Ayc-IY-f8B" firstAttribute="width" secondItem="WAj-oM-yRb" secondAttribute="width" id="HKL-DW-b07"/>
                                     <constraint firstItem="Ayc-IY-f8B" firstAttribute="centerX" secondItem="WAj-oM-yRb" secondAttribute="centerX" id="NEu-ET-EC4"/>
-                                    <constraint firstItem="77X-wi-bTE" firstAttribute="bottom" secondItem="pn4-6i-Fu7" secondAttribute="bottom" constant="639" id="bPl-PB-Z0D"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ayc-IY-f8B" secondAttribute="bottom" constant="-9" id="eEe-Mh-BhY"/>
-                                    <constraint firstItem="Ayc-IY-f8B" firstAttribute="bottom" secondItem="77X-wi-bTE" secondAttribute="bottom" constant="9" id="vao-Kh-zfe"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ayc-IY-f8B" secondAttribute="bottom" id="eEe-Mh-BhY"/>
+                                    <constraint firstItem="Ayc-IY-f8B" firstAttribute="bottom" secondItem="77X-wi-bTE" secondAttribute="bottom" id="vao-Kh-zfe"/>
                                     <constraint firstItem="pn4-6i-Fu7" firstAttribute="centerX" secondItem="WAj-oM-yRb" secondAttribute="centerX" id="w72-by-Xaw"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="4Sv-HK-oVL"/>
@@ -774,14 +779,18 @@
                         <viewLayoutGuide key="safeArea" id="SNW-qz-aGx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WAj-oM-yRb" firstAttribute="bottom" secondItem="SNW-qz-aGx" secondAttribute="bottom" id="Doj-2N-Q6g"/>
+                            <constraint firstItem="WAj-oM-yRb" firstAttribute="leading" secondItem="SNW-qz-aGx" secondAttribute="leading" id="HA4-C5-h71"/>
                             <constraint firstItem="WAj-oM-yRb" firstAttribute="centerX" secondItem="cwY-PH-7lI" secondAttribute="centerX" id="HDP-pG-VrJ"/>
-                            <constraint firstItem="SNW-qz-aGx" firstAttribute="bottom" secondItem="kVC-rX-hk0" secondAttribute="bottom" constant="6.5" id="Hhr-2Z-JoX"/>
                             <constraint firstItem="WAj-oM-yRb" firstAttribute="top" secondItem="SNW-qz-aGx" secondAttribute="top" id="Qr2-sa-ESu"/>
+                            <constraint firstItem="WAj-oM-yRb" firstAttribute="trailing" secondItem="SNW-qz-aGx" secondAttribute="trailing" id="Z30-Kj-fj3"/>
                             <constraint firstItem="SNW-qz-aGx" firstAttribute="bottom" secondItem="WAj-oM-yRb" secondAttribute="bottom" id="qg7-kp-hkm"/>
+                            <constraint firstItem="WAj-oM-yRb" firstAttribute="top" secondItem="SNW-qz-aGx" secondAttribute="top" id="txc-Fr-gnf"/>
                             <constraint firstItem="WAj-oM-yRb" firstAttribute="leading" secondItem="SNW-qz-aGx" secondAttribute="leading" id="wIE-40-hpi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DTU-8V-3bJ"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
                         <outlet property="clientName" destination="d7z-u4-qnQ" id="TAp-Qy-mQT"/>

@@ -128,6 +128,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         fetchFirestoredata()
         collection.reloadData()
+        
     }
     
     
@@ -140,15 +141,102 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     //MARK: Chart settings
     
-
     func updateChart() {
         
         
+        //Setting var for BarChart
+        
+        var OneDayBefore = [Double]()
+        var TwoDaysBefore = [Double]()
+        var ThreeDaysBefore = [Double]()
+        var FourDaysBefore = [Double]()
+        var FiveDaysBefore = [Double]()
+        var SixDaysBefore = [Double]()
+        var SevenDaysBefore = [Double]()
         
         
+        //getting week chart
+        
+        for i in newOrder {
+            
+            let exampleDate = i.jobdate
+            let today = Date()
+            
+            let dayFormatter = DateFormatter()
+            dayFormatter.dateStyle = .short
+            let stringDate = dayFormatter.string(from: exampleDate)
+
+            let fromStringToDate = dayFormatter.date(from: stringDate)
+            let todayDateString = dayFormatter.string(from: today)
+            let todayDateDate = dayFormatter.date(from: todayDateString)
+            
+            let calendar = NSCalendar.current as NSCalendar
+
+            let date1 = calendar.startOfDay(for: fromStringToDate!)
+            let date0 = calendar.startOfDay(for: todayDateDate!)
+
+            let unit = NSCalendar.Unit.day
+            //let unitMont = NSCalendar.Unit.month
+
+            let distance = calendar.components(unit, from: date0, to: date1, options: [])
+            //let monthDistance = calendar.components(unitMont, from: date0, to: date1, options: [])
+                
+                print("GIORNI DI DISTANZA: \(distance.day!)")
+            
+            if distance.day! < -1 && distance.day! > 0 {
+                OneDayBefore.append(Double("\(i.hoursNumber)")!)
+                print("MENO UN GIORNO \(i.hoursNumber)")
+            }
+            if distance.day! < -2 && distance.day! > -1 {
+                TwoDaysBefore.append(Double("\(i.hoursNumber)")!)
+            }
+            if distance.day! == -3 {
+                ThreeDaysBefore.append(Double("\(i.hoursNumber)")!)
+            }
+            if distance.day! == -4 {
+                FourDaysBefore.append(Double("\(i.hoursNumber)")!)
+            }
+            if distance.day! == -5 {
+                FiveDaysBefore.append(Double("\(i.hoursNumber)")!)
+            }
+            if distance.day! == -6 {
+                SixDaysBefore.append(Double("\(i.hoursNumber)")!)
+            }
+            if distance.day! == -7 {
+                SevenDaysBefore.append(Double("\(i.hoursNumber)")!)
+            }
+        }
+        
+        let dayOne = OneDayBefore.reduce(0, +)
+        let dayTwo = TwoDaysBefore.reduce(0, +)
+        let dayThree = ThreeDaysBefore.reduce(0, +)
+        let dayFour = FourDaysBefore.reduce(0, +)
+        let dayFive = FiveDaysBefore.reduce(0, +)
+        let daySix = SixDaysBefore.reduce(0, +)
+        let daySeven = SevenDaysBefore.reduce(0, +)
+        
+        print("DAYONE verifica...\(dayOne)")
+        print("DAYTWO verifica...\(dayTwo)")
+        print("DAYTHREE verifica...\(dayThree)")
+        print("DAYSEVEN verifica...\(daySeven)")
+        
+        let entryOne = BarChartDataEntry(x: 1.0, y: dayOne)
+        let entrytwo = BarChartDataEntry(x: 2.0, y: dayTwo)
+        let entryThree = BarChartDataEntry(x: 3.0, y: dayThree)
+        let entryFour = BarChartDataEntry(x: 4.0, y: dayFour)
+        let entryFive = BarChartDataEntry(x: 5.0, y: dayFive)
+        let entrySix = BarChartDataEntry(x: 6.0, y: daySix)
+        let entrySeven = BarChartDataEntry(x: 7.0, y: daySeven)
+        
+        let dataSet = BarChartDataSet(entries: [entryOne, entrytwo, entryThree, entryFour, entryFive, entrySix, entrySeven], label: "Week Work Time")
+        let data = BarChartData(dataSets: [dataSet])
+        graphView.data = data
+        graphView.chartDescription?.text = "Number of Hours this week"
+        
+        graphView.notifyDataSetChanged()
     }
     
-    
+   
     
     
     //MARK: Collection Setup
