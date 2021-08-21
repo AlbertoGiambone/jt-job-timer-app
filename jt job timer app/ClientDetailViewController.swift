@@ -25,8 +25,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var counterLabel: UILabel!
         
     @IBOutlet weak var collection: UICollectionView!
-        
-    @IBOutlet weak var graphView: BarChartView!
+
     
     
     @IBAction func AddJob(_ sender: UIButton) {
@@ -116,7 +115,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         collection.collectionViewLayout = UICollectionViewCompositionalLayout.list(using: layoutConfig)
         
         
-        updateChart()
+        //updateChart()
         
         //Segment settings
         
@@ -265,32 +264,32 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     
     //MARK: Chart settings
     
-    func updateChart() {
-        
-        let dayOne = OneDayBefore.reduce(0, +)
-        let dayTwo = TwoDaysBefore.reduce(0, +)
-        let dayThree = ThreeDaysBefore.reduce(0, +)
-        let dayFour = FourDaysBefore.reduce(0, +)
-        let dayFive = FiveDaysBefore.reduce(0, +)
-        let daySix = SixDaysBefore.reduce(0, +)
-        let daySeven = SevenDaysBefore.reduce(0, +)
-        
-        
-        let entryOne = BarChartDataEntry(x: 1.0, y: dayOne)
-        let entrytwo = BarChartDataEntry(x: 2.0, y: dayTwo)
-        let entryThree = BarChartDataEntry(x: 3.0, y: dayThree)
-        let entryFour = BarChartDataEntry(x: 4.0, y: dayFour)
-        let entryFive = BarChartDataEntry(x: 5.0, y: dayFive)
-        let entrySix = BarChartDataEntry(x: 6.0, y: daySix)
-        let entrySeven = BarChartDataEntry(x: 7.0, y: daySeven)
-        
-        let dataSet = BarChartDataSet(entries: [entryOne, entrytwo, entryThree, entryFour, entryFive, entrySix, entrySeven], label: "Week Work Time")
-        let data = BarChartData(dataSets: [dataSet])
-        graphView.data = data
-        graphView.chartDescription?.text = "Number of Hours this week"
-        
-        graphView.notifyDataSetChanged()
-    }
+//    func updateChart() {
+//
+//        let dayOne = OneDayBefore.reduce(0, +)
+//        let dayTwo = TwoDaysBefore.reduce(0, +)
+//        let dayThree = ThreeDaysBefore.reduce(0, +)
+//        let dayFour = FourDaysBefore.reduce(0, +)
+//        let dayFive = FiveDaysBefore.reduce(0, +)
+//        let daySix = SixDaysBefore.reduce(0, +)
+//        let daySeven = SevenDaysBefore.reduce(0, +)
+//
+//
+//        let entryOne = BarChartDataEntry(x: 1.0, y: dayOne)
+//        let entrytwo = BarChartDataEntry(x: 2.0, y: dayTwo)
+//        let entryThree = BarChartDataEntry(x: 3.0, y: dayThree)
+//        let entryFour = BarChartDataEntry(x: 4.0, y: dayFour)
+//        let entryFive = BarChartDataEntry(x: 5.0, y: dayFive)
+//        let entrySix = BarChartDataEntry(x: 6.0, y: daySix)
+//        let entrySeven = BarChartDataEntry(x: 7.0, y: daySeven)
+//
+//        let dataSet = BarChartDataSet(entries: [entryOne, entrytwo, entryThree, entryFour, entryFive, entrySix, entrySeven], label: "Week Work Time")
+//        let data = BarChartData(dataSets: [dataSet])
+//        graphView.data = data
+//        graphView.chartDescription?.text = "Number of Hours this week"
+//
+//        graphView.notifyDataSetChanged()
+//    }
     
    
     
