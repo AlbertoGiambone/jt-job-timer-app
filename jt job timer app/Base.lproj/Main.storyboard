@@ -246,11 +246,21 @@
                                                 <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-Sv-u2U" customClass="BarChartView" customModule="Charts">
+                                                <rect key="frame" x="87" y="447" width="240" height="240"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="240" id="0UP-TX-E4v"/>
+                                                    <constraint firstAttribute="height" constant="240" id="hqu-T5-nNR"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="I5r-Sv-u2U" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="IMU-BJ-tbX"/>
                                             <constraint firstItem="uUc-yV-lWg" firstAttribute="top" secondItem="Shv-Lq-fi0" secondAttribute="bottom" constant="58" id="Mn8-tV-ihP"/>
                                             <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="TGT-DO-wXD"/>
+                                            <constraint firstAttribute="bottom" secondItem="I5r-Sv-u2U" secondAttribute="bottom" constant="38" id="UQX-ij-KLN"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="top" secondItem="bSu-aV-V7V" secondAttribute="bottom" constant="58" id="VOv-Hj-QCD"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="ctF-BK-Gvb"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="top" secondItem="tlE-Em-A39" secondAttribute="top" constant="30" id="eT1-jm-e9I"/>
@@ -304,6 +314,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barChartView" destination="I5r-Sv-u2U" id="zrI-OJ-kmO"/>
                         <outlet property="clientNumber" destination="Shv-Lq-fi0" id="Zuh-YT-YXg"/>
                         <outlet property="hoursNumber" destination="uUc-yV-lWg" id="kri-Lr-WrZ"/>
                     </connections>
@@ -806,10 +817,51 @@
             </objects>
             <point key="canvasLocation" x="3894.202898550725" y="869.86607142857144"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="iDI-xO-GfT">
+            <objects>
+                <viewController id="M9f-9w-wLK" customClass="LoginViewController" customModule="jt_job_timer_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tFg-ao-fuz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="p8d-gn-sSe">
+                                <rect key="frame" x="143" y="167" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4V-ky-pyS">
+                                <rect key="frame" x="172" y="678" width="72" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="20"/>
+                                <state key="normal" title="Skip &gt;&gt;"/>
+                                <connections>
+                                    <action selector="AnonymousSignInPressed:" destination="M9f-9w-wLK" eventType="touchUpInside" id="Ocx-qp-Fyd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWI-db-e3s">
+                                <rect key="frame" x="101" y="535" width="212" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="apple-id-continue-with_2x-1"/>
+                                <connections>
+                                    <action selector="AppleSignInPressed:" destination="M9f-9w-wLK" eventType="touchUpInside" id="3UC-JX-4kS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rcc-8A-pns"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="AppLogo" destination="p8d-gn-sSe" id="iUQ-aA-HuI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k1N-8u-66i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514.49275362318849" y="-989.0625"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="wIg-27-eRo">
             <objects>
-                <tabBarController interfaceStyle="light" id="Rde-Wp-eED" sceneMemberID="viewController">
+                <tabBarController restorationIdentifier="TabBar" storyboardIdentifier="TabBar" interfaceStyle="light" id="Rde-Wp-eED" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="8Ec-ph-hqN"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -1145,8 +1197,10 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="apple-id-continue-with_2x-1" width="424" height="76"/>
         <image name="circle.grid.2x2.fill" catalog="system" width="128" height="112"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="iTunesArtwork" width="512" height="512"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="plus.viewfinder" catalog="system" width="128" height="115"/>

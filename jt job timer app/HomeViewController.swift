@@ -22,6 +22,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     
     @IBOutlet weak var hoursNumber: UITextField!
     
+    @IBOutlet weak var barChartView: BarChartView!
     
     
     
@@ -87,7 +88,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         super.viewDidLoad()
     
         self.tabBarItem.isEnabled = true
-        
+        getBarChartData()
     }
     
     //MARK: Fetch db client for aggregate data
@@ -99,6 +100,8 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     var hoursCounter = [String]()
     var stodo = [Double]()
     
+    
+    var ArrayForChart = [jobDetail]()
     
     func fetchFirestoreData() {
         
@@ -133,6 +136,8 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         
         //queryJob.whereField("JUID", isEqualTo: self.userUID!)
         
+        
+        
         queryJob.getDocuments() {
             (querySnapshot, err) in
             if let err = err {
@@ -144,6 +149,8 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                     
                     if r == self.userUID {
                     
+                        
+                        
                         let t = document.data()["hours number"] as! String
                         self.hoursCounter.append(t)
                         
@@ -183,4 +190,17 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         hoursCounter.removeAll()
     }
 
+    
+    func getBarChartData() {
+        
+        for u in ArrayForChart {
+            print("\(u.hoursNumber) ALLORAAAA::::::::")
+        }
+        
+        
+    }
+    
+    
+    
+    
 }

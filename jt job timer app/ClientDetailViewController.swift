@@ -128,7 +128,7 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     override func viewWillAppear(_ animated: Bool) {
         fetchFirestoredata()
         collection.reloadData()
-        
+        getWeekBalance ()
     }
     
     
@@ -139,26 +139,27 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     
-    //MARK: Chart settings
     
-    func updateChart() {
+    
+    //Setting value for BarChart
+    
+    var OneDayBefore = [Double]()
+    var TwoDaysBefore = [Double]()
+    var ThreeDaysBefore = [Double]()
+    var FourDaysBefore = [Double]()
+    var FiveDaysBefore = [Double]()
+    var SixDaysBefore = [Double]()
+    var SevenDaysBefore = [Double]()
+    
+    
+    
+    /*
+    func gettingChartdata() {
+        print("BEFORE FOR STATEMENT!")
         
-        
-        //Setting var for BarChart
-        
-        var OneDayBefore = [Double]()
-        var TwoDaysBefore = [Double]()
-        var ThreeDaysBefore = [Double]()
-        var FourDaysBefore = [Double]()
-        var FiveDaysBefore = [Double]()
-        var SixDaysBefore = [Double]()
-        var SevenDaysBefore = [Double]()
-        
-        
-        //getting week chart
-        
-        for i in newOrder {
+        for i in WDday {
             
+            print("internal testing....")
             let exampleDate = i.jobdate
             let today = Date()
             
@@ -180,32 +181,91 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
 
             let distance = calendar.components(unit, from: date0, to: date1, options: [])
             //let monthDistance = calendar.components(unitMont, from: date0, to: date1, options: [])
-                
-                print("GIORNI DI DISTANZA: \(distance.day!)")
-            
-            if distance.day! < -1 && distance.day! > 0 {
+        
+            if distance.day! > -1 {
                 OneDayBefore.append(Double("\(i.hoursNumber)")!)
                 print("MENO UN GIORNO \(i.hoursNumber)")
             }
-            if distance.day! < -2 && distance.day! > -1 {
+            if distance.day! > -2 && distance.day! < -1 {
                 TwoDaysBefore.append(Double("\(i.hoursNumber)")!)
             }
-            if distance.day! == -3 {
+            if distance.day! > -3 && distance.day! < -2 {
                 ThreeDaysBefore.append(Double("\(i.hoursNumber)")!)
             }
-            if distance.day! == -4 {
+            if distance.day! > -4 && distance.day! < -3 {
                 FourDaysBefore.append(Double("\(i.hoursNumber)")!)
             }
-            if distance.day! == -5 {
+            if distance.day! > -5 && distance.day! < -4 {
                 FiveDaysBefore.append(Double("\(i.hoursNumber)")!)
             }
-            if distance.day! == -6 {
+            if distance.day! > -6 {
                 SixDaysBefore.append(Double("\(i.hoursNumber)")!)
             }
-            if distance.day! == -7 {
+            if distance.day! > -7 {
                 SevenDaysBefore.append(Double("\(i.hoursNumber)")!)
             }
         }
+        
+        
+    }
+    */
+    
+    
+    func getWeekBalance() {
+        
+        print("BEFORE!!! ::::")
+        
+        for u in newOrder {
+            print("\(u.clientName) PRINTATOOOOOOOO")
+        }
+        
+        for j in WDday {
+            
+            print("AFTER!!! :::::")
+            let exampleDate = j.jobdate
+        let today = Date()
+
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateStyle = .short
+        let stringDate = dayFormatter.string(from: exampleDate)
+            
+            
+            
+        let fromStringToDate = dayFormatter.date(from: stringDate)
+        let todayDateString = dayFormatter.string(from: today)
+        let todayDateDate = dayFormatter.date(from: todayDateString)
+
+
+
+        let calendar = NSCalendar.current as NSCalendar
+
+        let date1 = calendar.startOfDay(for: fromStringToDate!)
+        let date0 = calendar.startOfDay(for: todayDateDate!)
+
+        let unit = NSCalendar.Unit.day
+        let unitMont = NSCalendar.Unit.month
+
+        let distance = calendar.components(unit, from: date0, to: date1, options: [])
+        let monthDistance = calendar.components(unitMont, from: date0, to: date1, options: [])
+            
+            print("GIORNI DI DISTANZA: \(distance.day!)")
+            
+            
+            if distance.day! > -8 {
+                
+                OneDayBefore.append(Double("\(j.hoursNumber)")!)
+                }
+            }
+            
+        }
+        
+        
+    
+    
+    
+    //MARK: Chart settings
+    
+    func updateChart() {
         
         let dayOne = OneDayBefore.reduce(0, +)
         let dayTwo = TwoDaysBefore.reduce(0, +)
@@ -215,10 +275,6 @@ class ClientDetailViewController: UIViewController, UICollectionViewDelegate, UI
         let daySix = SixDaysBefore.reduce(0, +)
         let daySeven = SevenDaysBefore.reduce(0, +)
         
-        print("DAYONE verifica...\(dayOne)")
-        print("DAYTWO verifica...\(dayTwo)")
-        print("DAYTHREE verifica...\(dayThree)")
-        print("DAYSEVEN verifica...\(daySeven)")
         
         let entryOne = BarChartDataEntry(x: 1.0, y: dayOne)
         let entrytwo = BarChartDataEntry(x: 2.0, y: dayTwo)

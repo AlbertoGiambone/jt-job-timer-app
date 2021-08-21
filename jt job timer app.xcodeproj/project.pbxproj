@@ -26,6 +26,8 @@
 		A04B61992590AE60009C8607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04B61972590AE60009C8607 /* LaunchScreen.storyboard */; };
 		A04B61A32590B98D009C8607 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B61A22590B98D009C8607 /* HomeViewController.swift */; };
 		A04B61A62590B9D0009C8607 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B61A52590B9D0009C8607 /* SettingsViewController.swift */; };
+		A06ECACF26CFEC9E0010955E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06ECACE26CFEC9E0010955E /* LoginViewController.swift */; };
+		A06ECAD126CFF7800010955E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06ECAD026CFF7800010955E /* TabBarController.swift */; };
 		A07EDA4F259DFFB000E4A585 /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */; };
 		A099639A25B9F7530044ECD2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099639925B9F7530044ECD2 /* Models.swift */; };
 		A0F1EEF12590C28200DDEC94 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1EEF02590C28200DDEC94 /* RoundButton.swift */; };
@@ -55,6 +57,8 @@
 		A04B619A2590AE61009C8607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04B61A22590B98D009C8607 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A04B61A52590B9D0009C8607 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A06ECACE26CFEC9E0010955E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A06ECAD026CFF7800010955E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
 		A099639925B9F7530044ECD2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A0F1A4F5259201A60033BF8E /* jt job timer app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "jt job timer app.entitlements"; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				A04B61892590AE60009C8607 /* AppDelegate.swift */,
 				A04B618B2590AE60009C8607 /* SceneDelegate.swift */,
 				A04B618F2590AE60009C8607 /* Main.storyboard */,
+				A06ECAD026CFF7800010955E /* TabBarController.swift */,
+				A06ECACE26CFEC9E0010955E /* LoginViewController.swift */,
 				A02E70D5264EAD8B00BBCE14 /* BilledViewController.swift */,
 				A0F9A5022652A34C00D34F58 /* BilledCellCollectionViewCell.swift */,
 				A044348525F51AD9002CBFAD /* ClientListViewController.swift */,
@@ -131,17 +137,25 @@
 				A04B61A22590B98D009C8607 /* HomeViewController.swift */,
 				A04B61A52590B9D0009C8607 /* SettingsViewController.swift */,
 				A04B61952590AE60009C8607 /* Assets.xcassets */,
-				A0F1EEF02590C28200DDEC94 /* RoundButton.swift */,
-				A015A8D725935104002BD06D /* RoundTableView.swift */,
-				A015A8D42593508D002BD06D /* RoundTableViewCell.swift */,
-				A015A8DA259489C8002BD06D /* RoundLabel.swift */,
-				A03184B625A1A53200D637AF /* RoundTextField.swift */,
+				A06ECACD26CFEAF80010955E /* Sevices Files */,
 				A04B61972590AE60009C8607 /* LaunchScreen.storyboard */,
 				A04B619A2590AE61009C8607 /* Info.plist */,
 				A0FC94582591F9E700BC42DA /* GoogleService-Info.plist */,
 				A04B61922590AE60009C8607 /* jt_job_timer_app.xcdatamodeld */,
 			);
 			path = "jt job timer app";
+			sourceTree = "<group>";
+		};
+		A06ECACD26CFEAF80010955E /* Sevices Files */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1EEF02590C28200DDEC94 /* RoundButton.swift */,
+				A015A8D725935104002BD06D /* RoundTableView.swift */,
+				A015A8D42593508D002BD06D /* RoundTableViewCell.swift */,
+				A03184B625A1A53200D637AF /* RoundTextField.swift */,
+				A015A8DA259489C8002BD06D /* RoundLabel.swift */,
+			);
+			path = "Sevices Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +299,7 @@
 				A044348625F51AD9002CBFAD /* ClientListViewController.swift in Sources */,
 				A015A8DB259489C8002BD06D /* RoundLabel.swift in Sources */,
 				A07EDA4F259DFFB000E4A585 /* ClientDetailViewController.swift in Sources */,
+				A06ECACF26CFEC9E0010955E /* LoginViewController.swift in Sources */,
 				A0F9A5032652A34C00D34F58 /* BilledCellCollectionViewCell.swift in Sources */,
 				A04B618A2590AE60009C8607 /* AppDelegate.swift in Sources */,
 				A015A8D825935104002BD06D /* RoundTableView.swift in Sources */,
@@ -294,6 +309,7 @@
 				A04B61A62590B9D0009C8607 /* SettingsViewController.swift in Sources */,
 				A03184B725A1A53200D637AF /* RoundTextField.swift in Sources */,
 				A015A8D52593508E002BD06D /* RoundTableViewCell.swift in Sources */,
+				A06ECAD126CFF7800010955E /* TabBarController.swift in Sources */,
 				A04B61A32590B98D009C8607 /* HomeViewController.swift in Sources */,
 				A015A8DE25948C17002BD06D /* AddClientViewController.swift in Sources */,
 			);
