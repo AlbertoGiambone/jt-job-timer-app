@@ -32,9 +32,13 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         
         do {
             try Auth.auth().signOut()
+            let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+            secondVC.modalPresentationStyle = .fullScreen // <<<<< (switched)
+            self.present(secondVC, animated:true, completion:nil)
           } catch let err {
             print(err)
           }
+        
     }
     
     
