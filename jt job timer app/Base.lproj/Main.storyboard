@@ -246,7 +246,7 @@
                                                 <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-Sv-u2U" customClass="BarChartView" customModule="Charts">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-Sv-u2U" customClass="LineChartView" customModule="Charts">
                                                 <rect key="frame" x="87" y="447" width="240" height="240"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -314,7 +314,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="barChartView" destination="I5r-Sv-u2U" id="zrI-OJ-kmO"/>
+                        <outlet property="LineChart" destination="I5r-Sv-u2U" id="BMd-O4-Wew"/>
                         <outlet property="clientNumber" destination="Shv-Lq-fi0" id="Zuh-YT-YXg"/>
                         <outlet property="hoursNumber" destination="uUc-yV-lWg" id="kri-Lr-WrZ"/>
                     </connections>
@@ -808,7 +808,7 @@
         <!--Login View Controller-->
         <scene sceneID="iDI-xO-GfT">
             <objects>
-                <viewController id="M9f-9w-wLK" customClass="LoginViewController" customModule="jt_job_timer_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="LoginVC" storyboardIdentifier="LoginVC" id="M9f-9w-wLK" customClass="LoginViewController" customModule="jt_job_timer_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tFg-ao-fuz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

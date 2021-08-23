@@ -22,7 +22,8 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     
     @IBOutlet weak var hoursNumber: UITextField!
     
-    @IBOutlet weak var barChartView: BarChartView!
+    @IBOutlet weak var LineChart: LineChartView!
+    
     
     
     
@@ -73,11 +74,8 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
             }
         }
         
-        
             fetchFirestoreData()
-        
-        
-        
+    
     }
     
     var userUID: String?
@@ -92,7 +90,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         super.viewDidLoad()
     
         self.tabBarItem.isEnabled = true
-        getBarChartData()
+        getLineChartData()
     }
     
     //MARK: Fetch db client for aggregate data
@@ -195,11 +193,18 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     }
 
     
-    func getBarChartData() {
+    func getLineChartData() {
+        
+        var wholeDate = [Date]()
+        
+        
         
         for u in ArrayForChart {
             print("\(u.hoursNumber) ALLORAAAA::::::::")
+            wholeDate.append(u.jobdate)
         }
+        wholeDate.sort(by: {$0.compare($1) == .orderedDescending})
+        
         
         
     }
