@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         }
         
             fetchFirestoreData()
-    
+        
     }
     
     var userUID: String?
@@ -90,7 +90,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         super.viewDidLoad()
     
         self.tabBarItem.isEnabled = true
-        getLineChartData()
+        
     }
     
     //MARK: Fetch db client for aggregate data
@@ -156,6 +156,8 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                         let t = document.data()["hours number"] as! String
                         self.hoursCounter.append(t)
                         
+                        ArrayForChart.append(jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"], hoursNumber: <#T##String#>, jobdate: <#T##Date#>, jobType: <#T##String#>, docID: <#T##String#>, clientID: <#T##String#>))
+                        
                     }
                     
                 }
@@ -193,20 +195,22 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     }
 
     
+        var wholeDate = [(date:Date, ore:String)]()
+    
     func getLineChartData() {
         
-        var wholeDate = [Date]()
-        
-        
-        
+
         for u in ArrayForChart {
             print("\(u.hoursNumber) ALLORAAAA::::::::")
-            wholeDate.append(u.jobdate)
+            wholeDate.append((u.jobdate, u.hoursNumber))
         }
-        wholeDate.sort(by: {$0.compare($1) == .orderedDescending})
+        //wholeDate.sort(by: {$0.compare($1) == .orderedAscending})
         
+      
+        let SortedArray = wholeDate.sorted(by: { $0.date < $1.date })
         
-        
+    
+        print(SortedArray)
     }
     
     
