@@ -156,8 +156,13 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                         let t = document.data()["hours number"] as! String
                         self.hoursCounter.append(t)
                         
-                        ArrayForChart.append(jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"], hoursNumber: <#T##String#>, jobdate: <#T##Date#>, jobType: <#T##String#>, docID: <#T##String#>, clientID: <#T##String#>))
+                        let formatter = DateFormatter()
+                        formatter.dateStyle = .short
+                        let d: Date = formatter.date(from: document.data()["job date"] as! String)!
                         
+                        let g = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: t, jobdate: d, jobType: document.data()["job type"] as! String, docID: document.documentID , clientID: document.data()["clientID"] as! String)
+                     
+                        self.ArrayForChart.append(g)
                     }
                     
                 }
@@ -210,7 +215,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         let SortedArray = wholeDate.sorted(by: { $0.date < $1.date })
         
     
-        print(SortedArray)
+        print("ECCO IL SORTED ARRAY: \(SortedArray)")
     }
     
     
