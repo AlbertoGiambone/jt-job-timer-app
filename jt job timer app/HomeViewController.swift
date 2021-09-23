@@ -74,9 +74,12 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
             }
         }
         
-            fetchFirestoreData()
-        
+        fetchFirestoreData()
+            
     }
+    
+    
+    
     
     var userUID: String?
     
@@ -136,10 +139,7 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
         
         let queryJob = db.collection("JobTime")
         
-        //queryJob.whereField("JUID", isEqualTo: self.userUID!)
-        
-        
-        
+
         queryJob.getDocuments() {
             (querySnapshot, err) in
             if let err = err {
@@ -153,14 +153,11 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                     
                         
                         
-                        let t = document.data()["hours number"] as! String
-                        self.hoursCounter.append(t)
-                        
                         let formatter = DateFormatter()
                         formatter.dateStyle = .short
                         let d: Date = formatter.date(from: document.data()["job date"] as! String)!
                         
-                        let g = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: t, jobdate: d, jobType: document.data()["job type"] as! String, docID: document.documentID , clientID: document.data()["clientID"] as! String)
+                        let g = jobDetail(JUID: document.data()["JUID"] as! String, clientName: document.data()["client name"] as! String, hoursNumber: document.data()["hours number"] as! String, jobdate: d, jobType: document.data()["job type"] as! String, docID: document.documentID , clientID: document.data()["clientID"] as! String)
                      
                         self.ArrayForChart.append(g)
                     }
@@ -168,19 +165,22 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
                 }
             }
             
-            if self.hoursCounter.isEmpty {
-                self.hoursCounter = ["0"]
-            }else{
-            for r in self.hoursCounter {
-                self.stodo.append(Double(r)!)
-                }
-            }
-            self.hoursNumber.text = String("\(self.stodo.reduce(0, +))")
         }
-     
+        print("  ECCO L'ARRAYFORCHART \(ArrayForChart)")
+        for u in ArrayForChart {
+            print("\(u.hoursNumber) ALLORAAAA::::::::")
+            wholeDate.append((u.jobdate, u.hoursNumber))
+        }
+        //wholeDate.sort(by: {$0.compare($1) == .orderedAscending})
+
+
+        let SortedArray = wholeDate.sorted(by: { $0.date < $1.date })
+
+
+        print("ECCO IL SORTED ARRAY: \(SortedArray)")
         
-    
     }
+    
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let user = authDataResult?.user {
@@ -202,20 +202,12 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     
         var wholeDate = [(date:Date, ore:String)]()
     
+    
     func getLineChartData() {
         
-
-        for u in ArrayForChart {
-            print("\(u.hoursNumber) ALLORAAAA::::::::")
-            wholeDate.append((u.jobdate, u.hoursNumber))
-        }
-        //wholeDate.sort(by: {$0.compare($1) == .orderedAscending})
         
-      
-        let SortedArray = wholeDate.sorted(by: { $0.date < $1.date })
         
-    
-        print("ECCO IL SORTED ARRAY: \(SortedArray)")
+        
     }
     
     

@@ -38,13 +38,13 @@ class LoginViewController: UIViewController, FUIAuthDelegate {
     func showUserInfo(user:User) {
 
         print("USER.UID: \(user.uid)")
-        UserDefaults.standard.setValue(user.uid, forKey: "userApple")
+        UserDefaults.standard.setValue(user.uid, forKey: "userInfo")
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
         if let user = authDataResult?.user {
             print("GREAT!!! You Are Logged in as \(user.uid)")
-            UserDefaults.standard.setValue(user.uid, forKey: "userApple")
+            UserDefaults.standard.setValue(user.uid, forKey: "userInfo")
         }
     }
     

@@ -174,12 +174,14 @@ class ClientViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var userUID: String?
             
             
-            override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        
+        Cname.removeAll()
+        
+        userUID = UserDefaults.standard.object(forKey: "userInfo") as? String
                 
-                userUID = UserDefaults.standard.object(forKey: "userInfo") as? String
-                
-                fetchFirestoreData()
-                table.reloadData()
+        fetchFirestoreData()
+        table.reloadData()
              
             }
     

@@ -59,6 +59,7 @@ class ClientListViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        Cname.removeAll()
         QueryClientInfo()
         print("CNAME PRINTED \(Cname)")
     }
