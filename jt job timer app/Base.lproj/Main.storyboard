@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rde-Wp-eED">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rde-Wp-eED">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JT Job Timer App version 1.1.2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypz-o7-CtX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JT Job Timer App version 1.1.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypz-o7-CtX">
                                 <rect key="frame" x="73" y="206" width="268" height="67"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -246,26 +247,24 @@
                                                 <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-Sv-u2U" customClass="LineChartView" customModule="Charts">
-                                                <rect key="frame" x="87" y="447" width="240" height="240"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yV0-9M-dW2">
+                                                <rect key="frame" x="8" y="325" width="398" height="225"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="240" id="0UP-TX-E4v"/>
-                                                    <constraint firstAttribute="height" constant="240" id="hqu-T5-nNR"/>
-                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="I5r-Sv-u2U" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="IMU-BJ-tbX"/>
+                                            <constraint firstItem="yV0-9M-dW2" firstAttribute="top" secondItem="xXO-NZ-iwJ" secondAttribute="bottom" constant="67" id="9gS-DH-Tnb"/>
                                             <constraint firstItem="uUc-yV-lWg" firstAttribute="top" secondItem="Shv-Lq-fi0" secondAttribute="bottom" constant="58" id="Mn8-tV-ihP"/>
+                                            <constraint firstItem="yV0-9M-dW2" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="8" id="NFc-sI-Dwx"/>
                                             <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="TGT-DO-wXD"/>
-                                            <constraint firstAttribute="bottom" secondItem="I5r-Sv-u2U" secondAttribute="bottom" constant="38" id="UQX-ij-KLN"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="top" secondItem="bSu-aV-V7V" secondAttribute="bottom" constant="58" id="VOv-Hj-QCD"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="ctF-BK-Gvb"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="top" secondItem="tlE-Em-A39" secondAttribute="top" constant="30" id="eT1-jm-e9I"/>
+                                            <constraint firstAttribute="bottom" secondItem="yV0-9M-dW2" secondAttribute="bottom" constant="175" id="l5y-gm-ll9"/>
                                             <constraint firstItem="bSu-aV-V7V" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="62" id="lyz-sA-wIp"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="62" id="m5K-PT-2z4"/>
+                                            <constraint firstAttribute="trailing" secondItem="yV0-9M-dW2" secondAttribute="trailing" constant="8" id="mc5-uF-oA4"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="otI-5U-4be"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="sfv-of-iMw"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="yTh-cc-mAn"/>
@@ -314,7 +313,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="LineChart" destination="I5r-Sv-u2U" id="BMd-O4-Wew"/>
+                        <outlet property="barchart" destination="yV0-9M-dW2" id="fIi-d8-Zr0"/>
                         <outlet property="clientNumber" destination="Shv-Lq-fi0" id="Zuh-YT-YXg"/>
                         <outlet property="hoursNumber" destination="uUc-yV-lWg" id="kri-Lr-WrZ"/>
                     </connections>
@@ -348,7 +347,7 @@
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="1oD-Jr-sf2">
-                                                        <rect key="frame" x="0.0" y="24.5" width="371" height="100"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="371" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1oD-Jr-sf2" id="p9y-pN-JGo">
                                                             <rect key="frame" x="0.0" y="0.0" width="371" height="100"/>
@@ -936,7 +935,7 @@
                                                 <color key="backgroundColor" red="1" green="0.92312410089999997" blue="0.67563563950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailButton" indentationWidth="10" reuseIdentifier="cell" id="XV6-OH-XKR">
-                                                        <rect key="frame" x="0.0" y="24.5" width="345" height="44"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="345" height="44"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XV6-OH-XKR" id="laM-hY-IyV">
                                                             <rect key="frame" x="0.0" y="0.0" width="304.5" height="44"/>

@@ -11,7 +11,7 @@ import Firebase
 import Charts
 
 
-class HomeViewController: UIViewController, FUIAuthDelegate {
+class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
 
     
     //MARK: Connection
@@ -22,12 +22,10 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     
     @IBOutlet weak var hoursNumber: UITextField!
     
-    @IBOutlet weak var LineChart: LineChartView!
+    @IBOutlet weak var barchart: UIView!
     
     
-    
-    
-    
+
     
     @IBAction func LogOut(_ sender: UIBarButtonItem) {
         
@@ -87,12 +85,19 @@ class HomeViewController: UIViewController, FUIAuthDelegate {
     /*Problema di Userdefault NIL, fetchare i dati in maniera diversa o luogo dicerso da willAppear*/
     
     
-    
+    var BAR_CHART = BarChartView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.tabBarItem.isEnabled = true
+        
+        BAR_CHART.frame = CGRect(x: 0, y: 0, width: self.barchart.frame.size.height, height: self.barchart.frame.size.width)
+        BAR_CHART.center = barchart.center
+        barchart.addSubview(BAR_CHART)
+        
+        var dataEntries = [BarChartDataEntry]()
+        
         
     }
     
