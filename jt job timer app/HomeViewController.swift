@@ -92,12 +92,27 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     
         self.tabBarItem.isEnabled = true
         
+        BAR_CHART.delegate = self
+
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
         BAR_CHART.frame = CGRect(x: 0, y: 0, width: self.barchart.frame.size.height, height: self.barchart.frame.size.width)
         BAR_CHART.center = barchart.center
         barchart.addSubview(BAR_CHART)
         
         var dataEntries = [BarChartDataEntry]()
         
+        for i in ArrayForChart {
+            for t in clientCounter {
+                if i.clientName == t {
+                    
+                }
+            }
+        }
         
     }
     
@@ -106,7 +121,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     let db = Firestore.firestore()
     
     var clientCounter = [String]()
-    var Cnumber: Int?
+    var Cnumber = [String: Double]()
     var hoursCounter = [String]()
     var stodo = [Double]()
     
@@ -171,18 +186,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
             }
             
         }
-        print("  ECCO L'ARRAYFORCHART \(ArrayForChart)")
-        for u in ArrayForChart {
-            print("\(u.hoursNumber) ALLORAAAA::::::::")
-            wholeDate.append((u.jobdate, u.hoursNumber))
-        }
-        //wholeDate.sort(by: {$0.compare($1) == .orderedAscending})
-
-
-        let SortedArray = wholeDate.sorted(by: { $0.date < $1.date })
-
-
-        print("ECCO IL SORTED ARRAY: \(SortedArray)")
+ 
         
     }
     
@@ -204,18 +208,5 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         hoursCounter.removeAll()
     }
 
-    
-        var wholeDate = [(date:Date, ore:String)]()
-    
-    
-    func getLineChartData() {
-        
-        
-        
-        
-    }
-    
-    
-    
-    
+
 }
