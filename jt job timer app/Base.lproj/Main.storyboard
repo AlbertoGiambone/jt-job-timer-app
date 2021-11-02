@@ -247,11 +247,11 @@
                                                 <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yV0-9M-dW2">
-                                                <rect key="frame" x="8" y="278" width="398" height="225"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yV0-9M-dW2" customClass="BarChartView" customModule="Charts">
+                                                <rect key="frame" x="8" y="278" width="398" height="421"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="225" id="mQ1-RL-lu2"/>
+                                                    <constraint firstAttribute="height" constant="421" id="mQ1-RL-lu2"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -269,6 +269,7 @@
                                             <constraint firstAttribute="trailing" secondItem="yV0-9M-dW2" secondAttribute="trailing" constant="8" id="mc5-uF-oA4"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="otI-5U-4be"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="sfv-of-iMw"/>
+                                            <constraint firstAttribute="bottom" secondItem="yV0-9M-dW2" secondAttribute="bottom" constant="26" id="xdS-mW-cpY"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="centerX" secondItem="tlE-Em-A39" secondAttribute="centerX" id="yTh-cc-mAn"/>
                                             <constraint firstItem="uUc-yV-lWg" firstAttribute="leading" secondItem="xXO-NZ-iwJ" secondAttribute="trailing" constant="8" symbolic="YES" id="zRF-IF-54h"/>
                                         </constraints>
@@ -1203,6 +1204,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

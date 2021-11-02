@@ -22,7 +22,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     
     @IBOutlet weak var hoursNumber: UITextField!
     
-    @IBOutlet weak var barchart: UIView!
+    @IBOutlet weak var barchart: BarChartView!
     
     
 
@@ -85,14 +85,14 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     /*Problema di Userdefault NIL, fetchare i dati in maniera diversa o luogo dicerso da willAppear*/
     
     
-    var BAR_CHART = BarChartView()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
         self.tabBarItem.isEnabled = true
         
-        BAR_CHART.delegate = self
+        barchart.delegate = self
 
         
         for m in clientCounter {
@@ -111,23 +111,26 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        BAR_CHART.frame = CGRect(x: 0, y: 0, width: self.barchart.frame.size.height, height: self.barchart.frame.size.width)
-        BAR_CHART.center = barchart.center
-        barchart.addSubview(BAR_CHART)
+        //BAR_CHART.frame = CGRect(x: 0, y: 0, width: self.barchart.frame.size.height, height: self.barchart.frame.size.width)
+        //BAR_CHART.center = barchart.center
+        //barchart.addSubview(BAR_CHART)
         
         var dataEntries = [BarChartDataEntry]()
                 
         
-        
-        for r in Cnumber {
-            dataEntries.append(BarChartDataEntry(x: Double(Cnumber[index(ofAccessibilityElement: r)])!, y: CHours[index(ofAccessibilityElement: r)]))
+        for i in 0..<10 {
+            dataEntries.append(BarChartDataEntry(x: Double(i), y: Double(i)))
         }
         
-        let set = BarChartDataSet(entries: dataEntries)
+    //    for r in Cnumber {
+      //      dataEntries.append(BarChartDataEntry(x: Double(Cnumber[index(ofAccessibilityElement: r)])!, y: CHours[index(ofAccessibilityElement: r)]))
+      //  }
         
+        let set = BarChartDataSet(entries: dataEntries)
+        set.colors = ChartColorTemplates.material()
         let CHART_DATA = BarChartData(dataSet: set)
         
-        BAR_CHART.data = CHART_DATA
+        barchart.data = CHART_DATA
         
     }
     
