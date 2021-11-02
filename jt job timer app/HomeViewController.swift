@@ -94,6 +94,17 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         
         BAR_CHART.delegate = self
 
+        
+        for m in clientCounter {
+            var time = 0.00
+            for y in ArrayForChart {
+                if m == y.clientName {
+                    time += Double(y.hoursNumber)!
+                }
+            }
+            Cnumber.append(m)
+            CHours.append(time)
+        }
     }
     
     
@@ -105,14 +116,18 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         barchart.addSubview(BAR_CHART)
         
         var dataEntries = [BarChartDataEntry]()
+                
         
-        for i in ArrayForChart {
-            for t in clientCounter {
-                if i.clientName == t {
-                    
-                }
-            }
+        
+        for r in Cnumber {
+            dataEntries.append(BarChartDataEntry(x: Double(Cnumber[index(ofAccessibilityElement: r)])!, y: CHours[index(ofAccessibilityElement: r)]))
         }
+        
+        let set = BarChartDataSet(entries: dataEntries)
+        
+        let CHART_DATA = BarChartData(dataSet: set)
+        
+        BAR_CHART.data = CHART_DATA
         
     }
     
@@ -121,7 +136,8 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     let db = Firestore.firestore()
     
     var clientCounter = [String]()
-    var Cnumber = [String: Double]()
+    var Cnumber = [String]()
+    var CHours = [Double]()
     var hoursCounter = [String]()
     var stodo = [Double]()
     
@@ -203,7 +219,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         clientCounter.removeAll()
-            Cnumber = 0
+            //Cnumber = 0
         stodo.removeAll()
         hoursCounter.removeAll()
     }
