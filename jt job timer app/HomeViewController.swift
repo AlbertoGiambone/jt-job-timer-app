@@ -60,6 +60,15 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         UserDefaults.standard.setValue(user.uid, forKey: "userInfo")
     }
     
+    //MARK: func for dispatch
+    
+    func run(after seconds: Int, completion: @escaping () -> Void) {
+        let deadLine = DispatchTime.now() + .seconds(seconds)
+        DispatchQueue.main.asyncAfter(deadline: deadLine){
+            completion()
+        }
+    }
+    
     
     //MARK: view Lifecycle
     
@@ -72,11 +81,15 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
             }
         }
         
-        fetchFirestoreData()
-            
+        
+        
+        run(after: 1){
+            self.fetchFirestoreData()
+        }
+        run(after: 3){
+            self.ArrayData()
+        }
     }
-    
-    
     
     
     var userUID: String?
@@ -84,6 +97,13 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     
     /*Problema di Userdefault NIL, fetchare i dati in maniera diversa o luogo dicerso da willAppear*/
     
+    //MARK: VAR
+    
+    var clientCounter = [String]()
+    var Cnumber = [String]()
+    var CHours = [Double]()
+    var hoursCounter = [String]()
+    var stodo = [Double]()
     
     
     
@@ -94,55 +114,19 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         
         barchart.delegate = self
 
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         
-        for m in clientCounter {
-            var time = 0.00
-            for y in ArrayForChart {
-                if m == y.clientName {
-                    time += Double(y.hoursNumber)!
-                }
-            }
-            Cnumber.append(m)
-            CHours.append(time)
-        }
     }
     
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        //BAR_CHART.frame = CGRect(x: 0, y: 0, width: self.barchart.frame.size.height, height: self.barchart.frame.size.width)
-        //BAR_CHART.center = barchart.center
-        //barchart.addSubview(BAR_CHART)
-        
-        var dataEntries = [BarChartDataEntry]()
-                
-        
-        for i in 0..<10 {
-            dataEntries.append(BarChartDataEntry(x: Double(i), y: Double(i)))
-        }
-        
-    //    for r in Cnumber {
-      //      dataEntries.append(BarChartDataEntry(x: Double(Cnumber[index(ofAccessibilityElement: r)])!, y: CHours[index(ofAccessibilityElement: r)]))
-      //  }
-        
-        let set = BarChartDataSet(entries: dataEntries)
-        set.colors = ChartColorTemplates.material()
-        let CHART_DATA = BarChartData(dataSet: set)
-        
-        barchart.data = CHART_DATA
-        
-    }
     
     //MARK: Fetch db client for aggregate data
     
     let db = Firestore.firestore()
     
-    var clientCounter = [String]()
-    var Cnumber = [String]()
-    var CHours = [Double]()
-    var hoursCounter = [String]()
-    var stodo = [Double]()
+    
     
     
     var ArrayForChart = [jobDetail]()
@@ -151,9 +135,8 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         
         userUID = UserDefaults.standard.object(forKey: "userInfo") as? String
         
-
-        
-        let queryRef = db.collection("UserInfo")
+           
+            let queryRef = db.collection("UserInfo")
         
         //queryRef.whereField("UID", isEqualTo: userUID!)
         
@@ -173,10 +156,11 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
             }
             self.clientNumber.text = String("\(self.clientCounter.count)")
             print("NUMERO CLIENTI XXXXXXXXXXX  \(self.clientCounter.count)")
+            
         }
 
         
-        let queryJob = db.collection("JobTime")
+            let queryJob = db.collection("JobTime")
         
 
         queryJob.getDocuments() {
@@ -203,11 +187,57 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
                     
                 }
             }
+        
             
         }
- 
-        
+    
     }
+    
+    
+
+    func ArrayData() {
+        print(clientCounter)
+        for y in self.clientCounter {
+            var hours = 0.00
+            for u in self.ArrayForChart {
+            if u.clientName == y {
+                hours += Double(u.hoursNumber)!
+                print("\(hours) ECCOOOOLLLLEEEEORREEEE")
+                }
+                
+            }
+            self.CHours.append(hours)
+            
+        }
+    
+    print("\(clientCounter) \(CHours) ECCO GLI ARRAY PER IL GRAFICO!!!")
+        
+        
+        
+        //CHART
+        
+        var dataEntries = [BarChartDataEntry]()
+                
+        
+        //for i in 0..<10 {
+       //     dataEntries.append(BarChartDataEntry(x: Double(i), y: Double(i)))
+      //  }
+         
+        let C_NUMBER = clientCounter.count - 1
+        
+        for r in 0...C_NUMBER {
+            for k in CHours {
+                dataEntries.append(BarChartDataEntry(x: Double(r), y: k))
+            }
+        }
+        
+        let set = BarChartDataSet(entries: dataEntries)
+        set.colors = ChartColorTemplates.material()
+        let CHART_DATA = BarChartData(dataSet: set)
+        
+        barchart.data = CHART_DATA
+    }
+    
     
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
