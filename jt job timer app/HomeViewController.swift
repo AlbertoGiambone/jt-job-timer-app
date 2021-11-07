@@ -225,10 +225,11 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
          
         let C_NUMBER = clientCounter.count - 1
         
-        for r in 0...C_NUMBER {
-            for k in CHours {
-                dataEntries.append(BarChartDataEntry(x: Double(r), y: k))
-            }
+        for r in 0..<clientCounter.count {
+            
+                //let dataForChart = BarChartDataEntry(x: , yValues: <#T##[Double]#>)
+            dataEntries.append(BarChartDataEntry(x: Double(r), y: CHours[r]))
+            
         }
         
         let set = BarChartDataSet(entries: dataEntries)
