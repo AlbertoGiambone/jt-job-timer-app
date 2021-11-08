@@ -217,26 +217,28 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         //CHART
         
         var dataEntries = [BarChartDataEntry]()
-                
-        
-        //for i in 0..<10 {
-       //     dataEntries.append(BarChartDataEntry(x: Double(i), y: Double(i)))
-      //  }
          
-        let C_NUMBER = clientCounter.count - 1
         
         for r in 0..<clientCounter.count {
-            
-                //let dataForChart = BarChartDataEntry(x: , yValues: <#T##[Double]#>)
+
             dataEntries.append(BarChartDataEntry(x: Double(r), y: CHours[r]))
-            
         }
         
         let set = BarChartDataSet(entries: dataEntries)
         set.colors = ChartColorTemplates.material()
+        set.stackLabels = clientCounter
+        
         let CHART_DATA = BarChartData(dataSet: set)
         
+        barchart.animate(xAxisDuration: 2, yAxisDuration: 2)
         barchart.data = CHART_DATA
+        barchart.xAxis.labelPosition = .bottom
+        barchart.xAxis.gridColor = .clear
+        barchart.leftAxis.gridColor = .clear
+        barchart.rightAxis.gridColor = .clear
+        barchart.rightAxis.enabled = false
+        barchart.xAxis.granularity = 1.0
+        
     }
     
     
