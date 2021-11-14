@@ -45,6 +45,7 @@ struct clientDetail {
     var CLstate: String
     var CLstreet: String
     var CLdocID: String
+    var addedOnDate: String
     
     var CLdict: [String: String] {
         return [
@@ -56,7 +57,8 @@ struct clientDetail {
             "province": CLprovince,
             "state": CLstate,
             "street": CLstreet,
-            "CLdocID": CLdocID
+            "CLdocID": CLdocID,
+            "addedOnDate": addedOnDate
             
         ]
     }

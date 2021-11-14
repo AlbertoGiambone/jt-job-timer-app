@@ -226,18 +226,21 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         
         let set = BarChartDataSet(entries: dataEntries)
         set.colors = ChartColorTemplates.material()
-        set.stackLabels = clientCounter
+        //set.stackLabels = clientCounter
         
         let CHART_DATA = BarChartData(dataSet: set)
         
         barchart.animate(xAxisDuration: 2, yAxisDuration: 2)
         barchart.data = CHART_DATA
-        barchart.xAxis.labelPosition = .bottom
+        //barchart.xAxis.labelPosition = .bottom
+        barchart.xAxis.enabled = false
         barchart.xAxis.gridColor = .clear
         barchart.leftAxis.gridColor = .clear
+        barchart.leftAxis.enabled = false
         barchart.rightAxis.gridColor = .clear
         barchart.rightAxis.enabled = false
         barchart.xAxis.granularity = 1.0
+        //barchart.xAxis.valueFormatter = IndexAxisValueFormatter(values: clientCounter)
         
     }
     

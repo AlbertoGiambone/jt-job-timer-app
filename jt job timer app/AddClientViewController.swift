@@ -50,6 +50,10 @@ class AddClientViewController: UIViewController {
             
             var ref: DocumentReference? = nil
             
+            let day = Date()
+            let dayFormatter = DateFormatter()
+            dayFormatter.dateStyle = .short
+            
             
             ref = db.collection("UserInfo").addDocument(data: [
                 "UID": String(userUID as! String),
@@ -58,8 +62,8 @@ class AddClientViewController: UIViewController {
                 "post code": String("\(customerPostCode.text ?? "")"),
                 "province": String("\(customerProvince.text ?? "")"),
                 "state": String("\(customerState.text ?? "")"),
-                "e-mail": String("\(customerEmail.text ?? "")")
-            
+                "e-mail": String("\(customerEmail.text ?? "")"),
+                "addedOnDate": String("\(dayFormatter.string(from: day))")
             
             ]) { err in
                 if let err = err {

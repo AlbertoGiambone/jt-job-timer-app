@@ -248,7 +248,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yV0-9M-dW2" customClass="BarChartView" customModule="Charts">
-                                                <rect key="frame" x="8" y="278" width="398" height="258"/>
+                                                <rect key="frame" x="53" y="278" width="309" height="258"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="258" id="mQ1-RL-lu2"/>
@@ -259,14 +259,14 @@
                                         <constraints>
                                             <constraint firstItem="yV0-9M-dW2" firstAttribute="top" secondItem="xXO-NZ-iwJ" secondAttribute="bottom" constant="20" id="9gS-DH-Tnb"/>
                                             <constraint firstItem="uUc-yV-lWg" firstAttribute="top" secondItem="Shv-Lq-fi0" secondAttribute="bottom" constant="58" id="Mn8-tV-ihP"/>
-                                            <constraint firstItem="yV0-9M-dW2" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="8" id="NFc-sI-Dwx"/>
+                                            <constraint firstItem="yV0-9M-dW2" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="53" id="NFc-sI-Dwx"/>
                                             <constraint firstItem="bSu-aV-V7V" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="TGT-DO-wXD"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="top" secondItem="bSu-aV-V7V" secondAttribute="bottom" constant="58" id="VOv-Hj-QCD"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="ctF-BK-Gvb"/>
                                             <constraint firstItem="1S0-KP-6g3" firstAttribute="top" secondItem="tlE-Em-A39" secondAttribute="top" constant="30" id="eT1-jm-e9I"/>
                                             <constraint firstItem="bSu-aV-V7V" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="62" id="lyz-sA-wIp"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="top" secondItem="1S0-KP-6g3" secondAttribute="bottom" constant="62" id="m5K-PT-2z4"/>
-                                            <constraint firstAttribute="trailing" secondItem="yV0-9M-dW2" secondAttribute="trailing" constant="8" id="mc5-uF-oA4"/>
+                                            <constraint firstAttribute="trailing" secondItem="yV0-9M-dW2" secondAttribute="trailing" constant="52" id="mc5-uF-oA4"/>
                                             <constraint firstItem="Shv-Lq-fi0" firstAttribute="leading" secondItem="bSu-aV-V7V" secondAttribute="trailing" constant="7" id="otI-5U-4be"/>
                                             <constraint firstItem="xXO-NZ-iwJ" firstAttribute="leading" secondItem="tlE-Em-A39" secondAttribute="leading" constant="39" id="sfv-of-iMw"/>
                                             <constraint firstAttribute="bottom" secondItem="yV0-9M-dW2" secondAttribute="bottom" constant="189" id="xdS-mW-cpY"/>
