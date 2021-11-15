@@ -19,8 +19,12 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
 
     @IBOutlet weak var clientNumber: UITextField!
     
+    @IBOutlet weak var thisMontClient: UITextField!
     
     @IBOutlet weak var hoursNumber: UITextField!
+    
+    @IBOutlet weak var thisMontHours: UITextField!
+    
     
     @IBOutlet weak var barchart: BarChartView!
     
@@ -99,7 +103,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     
     //MARK: VAR
     
-    var clientCounter = [String]()
+    var clientCounter = [clientDetail]()
     var Cnumber = [String]()
     var CHours = [Double]()
     var hoursCounter = [String]()
@@ -149,7 +153,10 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
                     
                     let r = document.data()["UID"] as! String
                     if r == self.userUID {
-                    self.clientCounter.append(document.data()["name"] as! String)
+                    
+                        let c = clientDetail(UID: document.data()["UID"] as! String, CLname: document.data()["CLname"] as! String, CLmail: document.data()["CLmail"] as! String, CLpostCode: document.data()["CLpostCode"] as! String, CLprovince: document.data()["CLprovince"] as! String, CLstate: document.data()["CLstate"] as! String, CLstreet: document.data()["CLstreet"] as! String, CLdocID: document.data()["CLdocID"] as! String, addedOnDate: document.data()["addedOnDate"] as! String)
+                        
+                        self.clientCounter.append(c)
                     }
                     
                 }

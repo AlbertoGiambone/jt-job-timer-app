@@ -207,8 +207,8 @@
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="⏰ Worked:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xXO-NZ-iwJ">
-                                                <rect key="frame" x="39" y="224" width="122" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="⏰" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xXO-NZ-iwJ">
+                                                <rect key="frame" x="38" y="228" width="122" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="aec-q9-nsc"/>
                                                     <constraint firstAttribute="width" constant="122" id="zY9-3F-daR"/>
@@ -217,8 +217,8 @@
                                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-yV-lWg">
-                                                <rect key="frame" x="169" y="224" width="102" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uUc-yV-lWg">
+                                                <rect key="frame" x="38" y="270" width="56" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="102" id="B3D-ya-Gzs"/>
                                                     <constraint firstAttribute="height" constant="34" id="Gqh-Ri-Phh"/>
@@ -227,8 +227,8 @@
                                                 <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="🤵‍♂️ Number:" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSu-aV-V7V">
-                                                <rect key="frame" x="39" y="132" width="123" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="🤵‍♂️" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bSu-aV-V7V">
+                                                <rect key="frame" x="38" y="102" width="123" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="1SR-AG-f3c"/>
                                                     <constraint firstAttribute="width" constant="123" id="3Id-TP-Dfh"/>
@@ -237,8 +237,8 @@
                                                 <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shv-Lq-fi0">
-                                                <rect key="frame" x="169" y="132" width="102" height="34"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Shv-Lq-fi0">
+                                                <rect key="frame" x="38" y="144" width="56" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="1jh-ne-qjT"/>
                                                     <constraint firstAttribute="width" constant="102" id="T8Y-MP-S4e"/>
@@ -247,13 +247,73 @@
                                                 <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yV0-9M-dW2" customClass="BarChartView" customModule="Charts">
-                                                <rect key="frame" x="53" y="278" width="309" height="258"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yV0-9M-dW2" customClass="BarChartView" customModule="Charts">
+                                                <rect key="frame" x="53" y="419" width="309" height="258"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="258" id="mQ1-RL-lu2"/>
                                                 </constraints>
                                             </view>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Total" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZXG-gZ-bFE">
+                                                <rect key="frame" x="102" y="144" width="69" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="OQB-Yw-OUf"/>
+                                                    <constraint firstAttribute="width" constant="123" id="RAv-SX-5Ip"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Added this Month" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPb-Zo-TbL">
+                                                <rect key="frame" x="102" y="186" width="151" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="123" id="pr3-cT-VHI"/>
+                                                    <constraint firstAttribute="height" constant="34" id="zHI-pH-1Ng"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kj-Xm-UdG">
+                                                <rect key="frame" x="38" y="186" width="56" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="123" id="IAm-0c-XbM"/>
+                                                    <constraint firstAttribute="height" constant="34" id="hP6-eO-4CT"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This Week" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDg-Ag-of7">
+                                                <rect key="frame" x="102" y="270" width="101" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="123" id="VAc-tM-4Gt"/>
+                                                    <constraint firstAttribute="height" constant="34" id="vvl-aq-Bbt"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="This Month" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8hw-Hy-yq1">
+                                                <rect key="frame" x="102" y="312" width="112" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="123" id="38C-2c-tr2"/>
+                                                    <constraint firstAttribute="height" constant="34" id="x1Q-cS-jef"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="upa-7u-DEj">
+                                                <rect key="frame" x="38" y="312" width="59" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="34" id="5I4-Ke-Zfj"/>
+                                                    <constraint firstAttribute="width" constant="123" id="Bpn-Qr-837"/>
+                                                </constraints>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -319,6 +379,8 @@
                         <outlet property="barchart" destination="yV0-9M-dW2" id="fIi-d8-Zr0"/>
                         <outlet property="clientNumber" destination="Shv-Lq-fi0" id="Zuh-YT-YXg"/>
                         <outlet property="hoursNumber" destination="uUc-yV-lWg" id="kri-Lr-WrZ"/>
+                        <outlet property="thisMontClient" destination="7kj-Xm-UdG" id="whW-Xd-aPt"/>
+                        <outlet property="thisMontHours" destination="upa-7u-DEj" id="6cg-fm-ixW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
