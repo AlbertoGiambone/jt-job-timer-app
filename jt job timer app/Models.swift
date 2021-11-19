@@ -45,9 +45,9 @@ struct clientDetail {
     var CLstate: String
     var CLstreet: String
     var CLdocID: String
-    var addedOnDate: String
+    var addedOnDate: Date
     
-    var CLdict: [String: String] {
+    var CLdict: [String: Any] {
         return [
         
             "UID": UID,

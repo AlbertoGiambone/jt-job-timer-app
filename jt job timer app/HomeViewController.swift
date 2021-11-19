@@ -90,8 +90,11 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         run(after: 1){
             self.fetchFirestoreData()
         }
-        run(after: 3){
+        run(after: 2){
             self.ArrayData()
+        }
+        run(after: 3){ [self] in
+            self.sentimentStat()
         }
     }
     
@@ -154,11 +157,20 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
                     let r = document.data()["UID"] as! String
                     if r == self.userUID {
                     
-                        let c = clientDetail(UID: document.data()["UID"] as! String, CLname: document.data()["CLname"] as! String, CLmail: document.data()["CLmail"] as! String, CLpostCode: document.data()["CLpostCode"] as! String, CLprovince: document.data()["CLprovince"] as! String, CLstate: document.data()["CLstate"] as! String, CLstreet: document.data()["CLstreet"] as! String, CLdocID: document.data()["CLdocID"] as! String, addedOnDate: document.data()["addedOnDate"] as! String)
+                        
+                        let formatter = DateFormatter()
+                        formatter.dateStyle = .short
+                        let dat = document.data()["addedOnDate"] as? String ?? ""
+                        if dat != "" {
+                        let D: Date = formatter.date(from: dat)!
+                        
+                        let c = clientDetail(UID: document.data()["UID"] as! String, CLname: document.data()["CLname"] as! String, CLmail: document.data()["CLmail"] as! String, CLpostCode: document.data()["CLpostCode"] as! String, CLprovince: document.data()["CLprovince"] as! String, CLstate: document.data()["CLstate"] as! String, CLstreet: document.data()["CLstreet"] as! String, CLdocID: document.documentID, addedOnDate: D)
                         
                         self.clientCounter.append(c)
+                        }else{
+                            print("added date == nil")
+                        }
                     }
-                    
                 }
             }
             self.clientNumber.text = String("\(self.clientCounter.count)")
@@ -200,6 +212,93 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
     
     }
     
+    var weekString = [String]()
+    var monthString = [String]()
+    
+    var Hweek = [Double]()
+    var Hmonth = [Double]()
+    
+    func sentimentStat() {
+        
+        clientNumber.text = String(clientCounter.count)
+        
+        
+        for cl in clientCounter {
+            
+                let exampleDate = cl.addedOnDate
+                let today = Date()
+                
+            let dayFormatter = DateFormatter()
+            dayFormatter.dateStyle = .short
+            let stringDate = dayFormatter.string(from: exampleDate)
+                
+                
+            let fromStringToDate = dayFormatter.date(from: stringDate)
+            let todayDateString = dayFormatter.string(from: today)
+            let todayDateDate = dayFormatter.date(from: todayDateString)
+
+
+            let calendar = NSCalendar.current as NSCalendar
+
+            let date1 = calendar.startOfDay(for: fromStringToDate!)
+            let date0 = calendar.startOfDay(for: todayDateDate!)
+
+            let unit = NSCalendar.Unit.day
+            let unitMont = NSCalendar.Unit.month
+
+            let distance = calendar.components(unit, from: date0, to: date1, options: [])
+            let monthDistance = calendar.components(unitMont, from: date0, to: date1, options: [])
+                
+                print("GIORNI DI DISTANZA: \(distance.day!)")
+            
+            
+            if monthDistance.month! <= -2 {
+                monthString.append(cl.CLname)
+            }
+        }
+        
+        for rt in ArrayForChart {
+            
+            let exampleDate = rt.jobdate
+            let today = Date()
+            
+        let dayFormatter = DateFormatter()
+        dayFormatter.dateStyle = .short
+        let stringDate = dayFormatter.string(from: exampleDate)
+            
+            
+        let fromStringToDate = dayFormatter.date(from: stringDate)
+        let todayDateString = dayFormatter.string(from: today)
+        let todayDateDate = dayFormatter.date(from: todayDateString)
+
+
+        let calendar = NSCalendar.current as NSCalendar
+
+        let date1 = calendar.startOfDay(for: fromStringToDate!)
+        let date0 = calendar.startOfDay(for: todayDateDate!)
+
+        let unit = NSCalendar.Unit.day
+        let unitMont = NSCalendar.Unit.month
+
+        let distance = calendar.components(unit, from: date0, to: date1, options: [])
+        let monthDistance = calendar.components(unitMont, from: date0, to: date1, options: [])
+            
+            print("GIORNI DI DISTANZA: \(distance.day!)")
+        
+        
+            if monthDistance.month! <= -2 {
+                Hmonth.append(Double(rt.hoursNumber)!)
+                }
+            
+            if distance.day! <= -8 {
+                Hweek.append(Double(rt.hoursNumber)!)
+            }
+            hoursNumber.text = String(Hweek.reduce(0, +).truncate(places: 2))
+            thisMontHours.text = String(Hmonth.reduce(0, +).truncate(places: 2))
+        }
+        
+        
+    }
     
 
     func ArrayData() {
@@ -207,7 +306,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, FUIAuthDelegate {
         for y in self.clientCounter {
             var hours = 0.00
             for u in self.ArrayForChart {
-            if u.clientName == y {
+                if u.clientName == y.CLname {
                 hours += Double(u.hoursNumber)!
                 print("\(hours) ECCOOOOLLLLEEEEORREEEE")
                 }

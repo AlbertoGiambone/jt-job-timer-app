@@ -28,6 +28,7 @@
 		A04B61A62590B9D0009C8607 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B61A52590B9D0009C8607 /* SettingsViewController.swift */; };
 		A06ECACF26CFEC9E0010955E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06ECACE26CFEC9E0010955E /* LoginViewController.swift */; };
 		A06ECAD126CFF7800010955E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A06ECAD026CFF7800010955E /* TabBarController.swift */; };
+		A07CDBAB27484C340020828F /* Truncation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07CDBAA27484C340020828F /* Truncation.swift */; };
 		A07EDA4F259DFFB000E4A585 /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */; };
 		A099639A25B9F7530044ECD2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = A099639925B9F7530044ECD2 /* Models.swift */; };
 		A0F1EEF12590C28200DDEC94 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1EEF02590C28200DDEC94 /* RoundButton.swift */; };
@@ -59,6 +60,7 @@
 		A04B61A52590B9D0009C8607 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A06ECACE26CFEC9E0010955E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A06ECAD026CFF7800010955E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A07CDBAA27484C340020828F /* Truncation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truncation.swift; sourceTree = "<group>"; };
 		A07EDA4E259DFFB000E4A585 /* ClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
 		A099639925B9F7530044ECD2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		A0F1A4F5259201A60033BF8E /* jt job timer app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "jt job timer app.entitlements"; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				A015A8D42593508D002BD06D /* RoundTableViewCell.swift */,
 				A03184B625A1A53200D637AF /* RoundTextField.swift */,
 				A015A8DA259489C8002BD06D /* RoundLabel.swift */,
+				A07CDBAA27484C340020828F /* Truncation.swift */,
 			);
 			path = "Sevices Files";
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				A0F9A5032652A34C00D34F58 /* BilledCellCollectionViewCell.swift in Sources */,
 				A04B618A2590AE60009C8607 /* AppDelegate.swift in Sources */,
 				A015A8D825935104002BD06D /* RoundTableView.swift in Sources */,
+				A07CDBAB27484C340020828F /* Truncation.swift in Sources */,
 				A04B618C2590AE60009C8607 /* SceneDelegate.swift in Sources */,
 				A03184B0259FA6EA00D637AF /* AddJobViewController.swift in Sources */,
 				A099639A25B9F7530044ECD2 /* Models.swift in Sources */,

@@ -36,7 +36,11 @@ class ClientListViewController: UIViewController, UITableViewDelegate, UITableVi
             }else{
                 for document in querySnapshot!.documents {
                     
-                    let t = clientDetail(UID: document.data()["UID"] as! String , CLname: document.data()["name"] as! String, CLmail: document.data()["e-mail"] as! String, CLpostCode: document.data()["post code"] as! String, CLprovince: document.data()["province"] as! String, CLstate: document.data()["state"] as! String, CLstreet: document.data()["street"] as! String, CLdocID: document.documentID)
+                    let formatter = DateFormatter()
+                    formatter.dateStyle = .short
+                    let d: Date = formatter.date(from: document.data()["addedOnDate"] as! String)!
+                    
+                    let t = clientDetail(UID: document.data()["UID"] as! String , CLname: document.data()["name"] as! String, CLmail: document.data()["e-mail"] as! String, CLpostCode: document.data()["post code"] as! String, CLprovince: document.data()["province"] as! String, CLstate: document.data()["state"] as! String, CLstreet: document.data()["street"] as! String, CLdocID: document.documentID, addedOnDate: d)
                     
                     if t.UID == userUID as! String {
                         self.Cname.append(t)
